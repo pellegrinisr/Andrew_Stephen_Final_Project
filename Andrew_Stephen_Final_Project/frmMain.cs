@@ -41,6 +41,7 @@ namespace Andrew_Stephen_Final_Project
 
         //for the order #
         private const int STARTING_ORDER = 1000;
+        public static int count = 0;
 
         public frmMain()
         {
@@ -263,6 +264,10 @@ namespace Andrew_Stephen_Final_Project
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
 
+            Order newOrder = new Order();
+            int count = 0;
+          
+            
             //bool isValid;
             //isValid = validation();
             //MessageBox.Show(isValid.ToString("c"));
@@ -270,14 +275,32 @@ namespace Andrew_Stephen_Final_Project
             //     {
             if (chkSpaghetti.Checked == true)
             {
+                //create a new instance of food
+                Food spaghetti = new Food();
+                spaghetti.Name = chkSpaghetti.Text;
+                spaghetti.Quantity = int.Parse(cbxSpaghettiQuant.SelectedItem.ToString());
+                spaghetti.Price = SPAGHETTI;
+
+                newOrder.FoodArray[count] = spaghetti;
+
                 //confirmForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(this.txtSpaghettiQuant.Text) * this.SPAGHETTI));
                 lstOrderInProgress.Items.Add("(" + cbxSpaghettiQuant.SelectedItem + ")  " + chkSpaghetti.Text + "   " + SPAGHETTI);
                 lstOrderInProgress.Items.Add(int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI);
+                confrimForm.lstOrderInProgress.Items.Add(spaghetti.Name.ToString() + " (" + spaghetti.Quantity + ") " + (spaghetti.Price * spaghetti.Quantity));
                 //lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.cbxSpaghettiQuant.SelectedItem + ", Price=" + (int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI));
             }
             if (chkLinguini.Checked == true)
+            {
+                Food linguini = new Food();
+                linguini.Name = chkLinguini.Text;
+                linguini.Quantity = int.Parse(cbxLinguiniQuant.SelectedItem.ToString());
+                linguini.Price = LINGUINI;
+
+                newOrder.FoodArray[count] = linguini;
+                
                 //lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
                 confrimForm.lstOrderInProgress.Items.Add("Linguini, Quantity=" + cbxLinguiniQuant.SelectedItem + ", Price=" + (int.Parse(cbxLinguiniQuant.SelectedItem.ToString()) * LINGUINI));
+            }
             if (chkLasagna.Checked == true)
                 confrimForm.lstOrderInProgress.Items.Add("Lasagna, Quantithy=" + cbxLasagnaQuant.SelectedItem + ", Price=" + (int.Parse(cbxLasagnaQuant.SelectedItem.ToString()) * LASAGNA));
                 //lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
