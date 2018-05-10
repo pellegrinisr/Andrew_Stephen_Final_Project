@@ -12,12 +12,12 @@ namespace Andrew_Stephen_Final_Project
         private const int _MAX_ORDER = 50;
         private int _orderNumber;
         private Food[] _foodArray;
-        
+
 
         public Order()
         {
-            _orderNumber = _STARTING_ORDER + frmMain.count;
-            frmMain.count++;
+            _orderNumber = _STARTING_ORDER + frmMain.countOrderNum;
+            frmMain.countOrderNum++;
             _foodArray = new Food[_MAX_ORDER];
         }
 
@@ -32,5 +32,6 @@ namespace Andrew_Stephen_Final_Project
             get { return _foodArray; }
             set { _foodArray = value; }
         }
+
     }
 }

@@ -42,5 +42,10 @@ namespace Andrew_Stephen_Final_Project
             get { return _name; }
             set { _name = value; }
         }
+
+        public override string ToString()
+        {
+            return _name + "     (" + _quantity + ")      " + "(" + _price + ")      " + _quantity * _price; 
+        }
     }
 }
