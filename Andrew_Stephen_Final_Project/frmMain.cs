@@ -64,9 +64,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkSpaghetti_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSpaghetti.Checked == true)
-                txtSpaghettiQuant.Visible = true;
+                cbxSpaghettiQuant.Visible = true;
             else
-                txtSpaghettiQuant.Visible = false;
+                cbxSpaghettiQuant.Visible = false;
             
         }
 
@@ -75,9 +75,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkLinguini_CheckedChanged(object sender, EventArgs e)
         {
             if (chkLinguini.Checked == true)
-                txtLinguiniQuant.Visible = true;
+                cbxLinguiniQuant.Visible = true;
             else
-                txtLinguiniQuant.Visible = false;
+                cbxLinguiniQuant.Visible = false;
         }
 
         //event handler for lasangna check box
@@ -85,9 +85,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkLasagna_CheckedChanged(object sender, EventArgs e)
         {
             if (chkLinguini.Checked == true)
-                txtLasagnaQuant.Visible = true;
+                cbxLasagnaQuant.Visible = true;
             else
-                txtLasagnaQuant.Visible = true;
+                cbxLasagnaQuant.Visible = true;
         }
 
         //event handler for ravioli check box
@@ -95,9 +95,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkRavioli_CheckedChanged(object sender, EventArgs e)
         {
             if (chkRavioli.Checked == true)
-                txtRavioliQuant.Visible = true;
+                cbxRavioliQuant.Visible = true;
             else
-                txtRavioliQuant.Visible = false;
+                cbxRavioliQuant.Visible = false;
 
         }
 
@@ -106,9 +106,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkPenne_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPenne.Checked == true)
-                txtPenneQuant.Visible = true;
+                cbxPenneQuant.Visible = true;
             else
-                txtPenneQuant.Visible = false;
+                cbxPenneQuant.Visible = false;
         }
 
         //event handler for the carbonara check box
@@ -116,9 +116,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkCarbonara_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCarbonara.Checked == true)
-                txtCarbonaraQuant.Visible = true;
+                cbxCarbonaraQuant.Visible = true;
             else
-                txtCarbonaraQuant.Visible = false;
+                cbxCarbonaraQuant.Visible = false;
         }
 
         //event handler for the picatta check box
@@ -126,9 +126,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkPicatta_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPicatta.Checked == true)
-                txtPicattaQuant.Visible = true;
+                cbxPicattaQuant.Visible = true;
             else
-                txtPicattaQuant.Visible = false;
+                cbxPicattaQuant.Visible = false;
         }
 
         //event handler for the marsala check box
@@ -136,9 +136,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkMarsala_CheckedChanged(object sender, EventArgs e)
         {
             if (chkMarsala.Checked == true)
-                txtMarsalaQuant.Visible = true;
+                cbxMarsalaQuant.Visible = true;
             else
-                txtMarsalaQuant.Visible = false;
+                cbxMarsalaQuant.Visible = false;
         }
 
         //event handler for the cioppino check box
@@ -146,9 +146,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkCioppino_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCioppino.Checked == true)
-                txtCioppinoQuant.Visible = true;
+                cbxCioppinoQuant.Visible = true;
             else
-                txtCioppinoQuant.Visible = false;
+                cbxCioppinoQuant.Visible = false;
         }
 
         //event handler for the pizza check box
@@ -156,27 +156,27 @@ namespace Andrew_Stephen_Final_Project
         private void chkPizza_CheckedChanged(object sender, EventArgs e)
         {
             if (chkPizza.Checked == true)
-                txtPizzaQuant.Visible = true;
+                cbxPizzaQuant.Visible = true;
             else
-                txtPizzaQuant.Visible = false;
+                cbxPizzaQuant.Visible = false;
         }
         //event handler
         //show/hide house salad quantity
         private void chkHouseSalad_CheckedChanged(object sender, EventArgs e)
         {
             if (chkHouseSalad.Checked == true)
-                txtHouseQuant.Visible = true;
+                cbxHouseQuant.Visible = true;
             else
-                txtHouseQuant.Visible = false;
+                cbxHouseQuant.Visible = false;
         }
         //event handler
         //show/hide caesar salad quantity
         private void chkCaesar_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCaesar.Checked == true)
-                txtCaesarQuant.Visible = true;
+                cbxCaesarQuant.Visible = true;
             else
-                txtCaesarQuant.Visible = false;
+                cbxCaesarQuant.Visible = false;
         }
 
         //event handler
@@ -184,9 +184,9 @@ namespace Andrew_Stephen_Final_Project
         private void chkSpringGreens_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSpringGreens.Checked == true)
-                txtSpringQuant.Visible = true;
+                cbxSpringQuant.Visible = true;
             else
-                txtSpringQuant.Visible = false;
+                cbxSpringQuant.Visible = false;
         }
 
         //event handler
@@ -194,14 +194,15 @@ namespace Andrew_Stephen_Final_Project
         private void chkCaprese_CheckedChanged(object sender, EventArgs e)
         {
             if (chkCaprese.Checked == true)
-                txtCapreseQuant.Visible = true;
+                cbxCapreseQuant.Visible = true;
             else
-                txtCapreseQuant.Visible = false;
+                cbxCapreseQuant.Visible = false;
         }
 
         //function
         //make sure each selected check box has a quantity
         //SO FAR ONLY WORKS FOR ENTREES AND SALADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        /*
         private bool validation()
         {
             bool isValid = true;
@@ -232,7 +233,7 @@ namespace Andrew_Stephen_Final_Project
             {
                 if (c is TextBox && c.Visible == true)
                 {
-                    if (c.Text == "")
+                    if ()
                     {
                         MessageBox.Show("Please enter quantity for each selected item.");
                         isValid = false;
@@ -253,64 +254,70 @@ namespace Andrew_Stephen_Final_Project
             return isValid;
         }
 
+    */
+
         //function
         //calculate the total price of each food item (price x quantity)
         // and store the value in an array
         //add items and their respective prices to the list box
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
-            
-            bool isValid;
-            isValid = validation();
-            MessageBox.Show(isValid.ToString());
-            if (isValid == true)
+
+            //bool isValid;
+            //isValid = validation();
+            //MessageBox.Show(isValid.ToString("c"));
+            // if (isValid == true)
+            //     {
+            if (chkSpaghetti.Checked == true)
             {
-                if (chkSpaghetti.Checked == true)
-                    //confirmForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(this.txtSpaghettiQuant.Text) * this.SPAGHETTI));
-                    confrimForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(txtSpaghettiQuant.Text) * SPAGHETTI));
-                if (chkLinguini.Checked == true)
-                    //lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
-                    confrimForm.lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
-                if (chkLasagna.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("Lasagna, Quantithy=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
-                    //lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
-                if (chkRavioli.Checked == true)  
-                    confrimForm.lstOrderInProgress.Items.Add("Ravioli, Quantity=" + txtRavioliQuant.Text + ", Price=" + (int.Parse(txtRavioliQuant.Text) * RAVIOLI));
-                if (chkPenne.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("Penne, Quantity=" + txtPenneQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text) * PENNE));
-                if (chkCarbonara.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text) * PENNE));
-                    //lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text)* PENNE));
-                if (chkPicatta.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
-                    //lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
-                if (chkMarsala.Checked == true) 
-                    confrimForm.lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text) * MARSALA));
-                //lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text)* MARSALA));
-                if (chkCioppino.Checked == true)  
-                   confrimForm.lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
-                // lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
-                if (chkPizza.Checked == true) 
-                   confrimForm.lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
-                // lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
-                if (chkHouseSalad.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
-                //lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
-                if (chkCaesar.Checked == true)
-                   confrimForm.lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
-                // lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
-                if (chkSpringGreens.Checked == true)
-                   confrimForm.lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
-                // lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
-                if (chkCaprese.Checked == true)
-                    confrimForm.lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
-                //lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
+                //confirmForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(this.txtSpaghettiQuant.Text) * this.SPAGHETTI));
+                lstOrderInProgress.Items.Add("(" + cbxSpaghettiQuant.SelectedItem + ")  " + chkSpaghetti.Text + "   " + SPAGHETTI);
+                lstOrderInProgress.Items.Add(int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI);
+                //lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.cbxSpaghettiQuant.SelectedItem + ", Price=" + (int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI));
+            }
+            if (chkLinguini.Checked == true)
+                //lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
+                confrimForm.lstOrderInProgress.Items.Add("Linguini, Quantity=" + cbxLinguiniQuant.SelectedItem + ", Price=" + (int.Parse(cbxLinguiniQuant.SelectedItem.ToString()) * LINGUINI));
+            if (chkLasagna.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Lasagna, Quantithy=" + cbxLasagnaQuant.SelectedItem + ", Price=" + (int.Parse(cbxLasagnaQuant.SelectedItem.ToString()) * LASAGNA));
+                //lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
+            if (chkRavioli.Checked == true)  
+                confrimForm.lstOrderInProgress.Items.Add("Ravioli, Quantity=" + cbxRavioliQuant.SelectedItem + ", Price=" + (int.Parse(cbxRavioliQuant.SelectedItem.ToString()) * RAVIOLI));
+            if (chkPenne.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Penne, Quantity=" + cbxPenneQuant.SelectedItem + ", Price=" + (int.Parse(cbxPenneQuant.SelectedItem.ToString()) * PENNE));
+            if (chkCarbonara.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Carbonara, Quantity=" + cbxCarbonaraQuant.SelectedItem + ", Price=" + (int.Parse(cbxCarbonaraQuant.SelectedItem.ToString()) * PENNE));
+                //lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text)* PENNE));
+            if (chkPicatta.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Picatta, Quantity=" + cbxPicattaQuant.Text + ", Price=" + (int.Parse(cbxPicattaQuant.SelectedItem.ToString()) * PICATTA));
+                //lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
+            if (chkMarsala.Checked == true) 
+                confrimForm.lstOrderInProgress.Items.Add("Marsala, Quantity=" + cbxMarsalaQuant.Text + ", Price=" + (int.Parse(cbxMarsalaQuant.SelectedItem.ToString()) * MARSALA));
+            //lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text)* MARSALA));
+            if (chkCioppino.Checked == true)  
+                confrimForm.lstOrderInProgress.Items.Add("Cioppino, Quantity=" + cbxCioppinoQuant.SelectedItem + ", Price=" + (int.Parse(cbxCioppinoQuant.SelectedItem.ToString()) * CIOPPINO));
+            // lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
+            if (chkPizza.Checked == true) 
+                confrimForm.lstOrderInProgress.Items.Add("Pizza, Quantity=" + cbxPizzaQuant.SelectedItem + ", Price=" + (int.Parse(cbxPizzaQuant.SelectedItem.ToString()) * PIZZA));
+            // lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
+            if (chkHouseSalad.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("House Salad, Quantity=" + cbxHouseQuant.SelectedItem + ", Price=" + (int.Parse(cbxHouseQuant.SelectedItem.ToString()) * HOUSE));
+            //lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
+            if (chkCaesar.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + cbxCaesarQuant.SelectedItem + ", Price= " + (int.Parse(cbxCaesarQuant.SelectedItem.ToString()) * CAESAR));
+            // lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
+            if (chkSpringGreens.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + cbxSpringQuant.SelectedItem + ", Price=" + (int.Parse(cbxSpringQuant.SelectedItem.ToString()) * SPRING));
+            // lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
+            if (chkCaprese.Checked == true)
+                confrimForm.lstOrderInProgress.Items.Add("Caprese, Quantity=" + cbxCapreseQuant.SelectedItem + ", Price=" + (int.Parse(cbxCapreseQuant.SelectedItem.ToString()) * CAPRESE));
+            //lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
 
                 //show the frmConfirmation object with the filled in list box
                 confrimForm.Show();
-            }
-            else
-                MessageBox.Show("Please fix the errors before continuing.");
+            //}
+            //else
+              //  MessageBox.Show("Please fix the errors before continuing.");
         }
 
         //event handler
@@ -374,6 +381,8 @@ namespace Andrew_Stephen_Final_Project
                 }
             }
         }
+
+        
     }
 }
 

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gbxEntree = new System.Windows.Forms.GroupBox();
+            this.cbxRavioliQuant = new System.Windows.Forms.ComboBox();
+            this.cbxLasagnaQuant = new System.Windows.Forms.ComboBox();
+            this.cbxLinguiniQuant = new System.Windows.Forms.ComboBox();
+            this.cbxSpaghettiQuant = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -41,16 +45,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPicattaQuant = new System.Windows.Forms.TextBox();
-            this.txtMarsalaQuant = new System.Windows.Forms.TextBox();
-            this.txtCioppinoQuant = new System.Windows.Forms.TextBox();
-            this.txtPizzaQuant = new System.Windows.Forms.TextBox();
-            this.txtCarbonaraQuant = new System.Windows.Forms.TextBox();
-            this.txtLinguiniQuant = new System.Windows.Forms.TextBox();
-            this.txtLasagnaQuant = new System.Windows.Forms.TextBox();
-            this.txtPenneQuant = new System.Windows.Forms.TextBox();
-            this.txtRavioliQuant = new System.Windows.Forms.TextBox();
-            this.txtSpaghettiQuant = new System.Windows.Forms.TextBox();
             this.chkPizza = new System.Windows.Forms.CheckBox();
             this.chkCioppino = new System.Windows.Forms.CheckBox();
             this.chkMarsala = new System.Windows.Forms.CheckBox();
@@ -62,25 +56,18 @@
             this.chkLinguini = new System.Windows.Forms.CheckBox();
             this.chkSpaghetti = new System.Windows.Forms.CheckBox();
             this.gbxSalad = new System.Windows.Forms.GroupBox();
-            this.txtCapreseQuant = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtSpringQuant = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtCaesarQuant = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtHouseQuant = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.chkCaprese = new System.Windows.Forms.CheckBox();
             this.chkSpringGreens = new System.Windows.Forms.CheckBox();
             this.chkCaesar = new System.Windows.Forms.CheckBox();
             this.chkHouseSalad = new System.Windows.Forms.CheckBox();
             this.gbxDrinks = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnBuildOrder = new System.Windows.Forms.Button();
@@ -93,6 +80,16 @@
             this.txtOrderNum = new System.Windows.Forms.TextBox();
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.btnSearchOrder = new System.Windows.Forms.Button();
+            this.cbxPenneQuant = new System.Windows.Forms.ComboBox();
+            this.cbxCarbonaraQuant = new System.Windows.Forms.ComboBox();
+            this.cbxPicattaQuant = new System.Windows.Forms.ComboBox();
+            this.cbxMarsalaQuant = new System.Windows.Forms.ComboBox();
+            this.cbxCioppinoQuant = new System.Windows.Forms.ComboBox();
+            this.cbxPizzaQuant = new System.Windows.Forms.ComboBox();
+            this.cbxHouseQuant = new System.Windows.Forms.ComboBox();
+            this.cbxCaesarQuant = new System.Windows.Forms.ComboBox();
+            this.cbxSpringQuant = new System.Windows.Forms.ComboBox();
+            this.cbxCapreseQuant = new System.Windows.Forms.ComboBox();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
@@ -100,6 +97,16 @@
             // 
             // gbxEntree
             // 
+            this.gbxEntree.Controls.Add(this.cbxPizzaQuant);
+            this.gbxEntree.Controls.Add(this.cbxCioppinoQuant);
+            this.gbxEntree.Controls.Add(this.cbxMarsalaQuant);
+            this.gbxEntree.Controls.Add(this.cbxPicattaQuant);
+            this.gbxEntree.Controls.Add(this.cbxCarbonaraQuant);
+            this.gbxEntree.Controls.Add(this.cbxPenneQuant);
+            this.gbxEntree.Controls.Add(this.cbxRavioliQuant);
+            this.gbxEntree.Controls.Add(this.cbxLasagnaQuant);
+            this.gbxEntree.Controls.Add(this.cbxLinguiniQuant);
+            this.gbxEntree.Controls.Add(this.cbxSpaghettiQuant);
             this.gbxEntree.Controls.Add(this.label16);
             this.gbxEntree.Controls.Add(this.label15);
             this.gbxEntree.Controls.Add(this.label14);
@@ -112,16 +119,6 @@
             this.gbxEntree.Controls.Add(this.label7);
             this.gbxEntree.Controls.Add(this.label6);
             this.gbxEntree.Controls.Add(this.label5);
-            this.gbxEntree.Controls.Add(this.txtPicattaQuant);
-            this.gbxEntree.Controls.Add(this.txtMarsalaQuant);
-            this.gbxEntree.Controls.Add(this.txtCioppinoQuant);
-            this.gbxEntree.Controls.Add(this.txtPizzaQuant);
-            this.gbxEntree.Controls.Add(this.txtCarbonaraQuant);
-            this.gbxEntree.Controls.Add(this.txtLinguiniQuant);
-            this.gbxEntree.Controls.Add(this.txtLasagnaQuant);
-            this.gbxEntree.Controls.Add(this.txtPenneQuant);
-            this.gbxEntree.Controls.Add(this.txtRavioliQuant);
-            this.gbxEntree.Controls.Add(this.txtSpaghettiQuant);
             this.gbxEntree.Controls.Add(this.chkPizza);
             this.gbxEntree.Controls.Add(this.chkCioppino);
             this.gbxEntree.Controls.Add(this.chkMarsala);
@@ -134,11 +131,95 @@
             this.gbxEntree.Controls.Add(this.chkSpaghetti);
             this.gbxEntree.Location = new System.Drawing.Point(12, 136);
             this.gbxEntree.Name = "gbxEntree";
-            this.gbxEntree.Size = new System.Drawing.Size(575, 458);
+            this.gbxEntree.Size = new System.Drawing.Size(597, 458);
             this.gbxEntree.TabIndex = 0;
             this.gbxEntree.TabStop = false;
             this.gbxEntree.Text = "Entree";
             this.gbxEntree.Visible = false;
+            // 
+            // cbxRavioliQuant
+            // 
+            this.cbxRavioliQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRavioliQuant.FormattingEnabled = true;
+            this.cbxRavioliQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxRavioliQuant.Location = new System.Drawing.Point(144, 243);
+            this.cbxRavioliQuant.Name = "cbxRavioliQuant";
+            this.cbxRavioliQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxRavioliQuant.TabIndex = 35;
+            this.cbxRavioliQuant.Visible = false;
+            // 
+            // cbxLasagnaQuant
+            // 
+            this.cbxLasagnaQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLasagnaQuant.FormattingEnabled = true;
+            this.cbxLasagnaQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxLasagnaQuant.Location = new System.Drawing.Point(141, 178);
+            this.cbxLasagnaQuant.Name = "cbxLasagnaQuant";
+            this.cbxLasagnaQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxLasagnaQuant.TabIndex = 34;
+            this.cbxLasagnaQuant.Visible = false;
+            // 
+            // cbxLinguiniQuant
+            // 
+            this.cbxLinguiniQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLinguiniQuant.FormattingEnabled = true;
+            this.cbxLinguiniQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxLinguiniQuant.Location = new System.Drawing.Point(144, 118);
+            this.cbxLinguiniQuant.Name = "cbxLinguiniQuant";
+            this.cbxLinguiniQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxLinguiniQuant.TabIndex = 33;
+            this.cbxLinguiniQuant.Visible = false;
+            // 
+            // cbxSpaghettiQuant
+            // 
+            this.cbxSpaghettiQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSpaghettiQuant.FormattingEnabled = true;
+            this.cbxSpaghettiQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxSpaghettiQuant.Location = new System.Drawing.Point(144, 63);
+            this.cbxSpaghettiQuant.Name = "cbxSpaghettiQuant";
+            this.cbxSpaghettiQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxSpaghettiQuant.TabIndex = 32;
+            this.cbxSpaghettiQuant.Visible = false;
             // 
             // label16
             // 
@@ -247,86 +328,6 @@
             this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 20;
             this.label5.Text = "Quantity";
-            // 
-            // txtPicattaQuant
-            // 
-            this.txtPicattaQuant.Location = new System.Drawing.Point(455, 53);
-            this.txtPicattaQuant.Name = "txtPicattaQuant";
-            this.txtPicattaQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtPicattaQuant.TabIndex = 19;
-            this.txtPicattaQuant.Visible = false;
-            // 
-            // txtMarsalaQuant
-            // 
-            this.txtMarsalaQuant.Location = new System.Drawing.Point(450, 122);
-            this.txtMarsalaQuant.Name = "txtMarsalaQuant";
-            this.txtMarsalaQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtMarsalaQuant.TabIndex = 18;
-            this.txtMarsalaQuant.Visible = false;
-            // 
-            // txtCioppinoQuant
-            // 
-            this.txtCioppinoQuant.Location = new System.Drawing.Point(450, 176);
-            this.txtCioppinoQuant.Name = "txtCioppinoQuant";
-            this.txtCioppinoQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCioppinoQuant.TabIndex = 17;
-            this.txtCioppinoQuant.Visible = false;
-            // 
-            // txtPizzaQuant
-            // 
-            this.txtPizzaQuant.Location = new System.Drawing.Point(450, 243);
-            this.txtPizzaQuant.Name = "txtPizzaQuant";
-            this.txtPizzaQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtPizzaQuant.TabIndex = 16;
-            this.txtPizzaQuant.Visible = false;
-            // 
-            // txtCarbonaraQuant
-            // 
-            this.txtCarbonaraQuant.Location = new System.Drawing.Point(145, 383);
-            this.txtCarbonaraQuant.Name = "txtCarbonaraQuant";
-            this.txtCarbonaraQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCarbonaraQuant.TabIndex = 15;
-            this.txtCarbonaraQuant.Visible = false;
-            // 
-            // txtLinguiniQuant
-            // 
-            this.txtLinguiniQuant.Location = new System.Drawing.Point(147, 117);
-            this.txtLinguiniQuant.Name = "txtLinguiniQuant";
-            this.txtLinguiniQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtLinguiniQuant.TabIndex = 14;
-            this.txtLinguiniQuant.Visible = false;
-            // 
-            // txtLasagnaQuant
-            // 
-            this.txtLasagnaQuant.Location = new System.Drawing.Point(145, 176);
-            this.txtLasagnaQuant.Name = "txtLasagnaQuant";
-            this.txtLasagnaQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtLasagnaQuant.TabIndex = 13;
-            this.txtLasagnaQuant.Visible = false;
-            // 
-            // txtPenneQuant
-            // 
-            this.txtPenneQuant.Location = new System.Drawing.Point(145, 310);
-            this.txtPenneQuant.Name = "txtPenneQuant";
-            this.txtPenneQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtPenneQuant.TabIndex = 12;
-            this.txtPenneQuant.Visible = false;
-            // 
-            // txtRavioliQuant
-            // 
-            this.txtRavioliQuant.Location = new System.Drawing.Point(145, 241);
-            this.txtRavioliQuant.Name = "txtRavioliQuant";
-            this.txtRavioliQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtRavioliQuant.TabIndex = 11;
-            this.txtRavioliQuant.Visible = false;
-            // 
-            // txtSpaghettiQuant
-            // 
-            this.txtSpaghettiQuant.Location = new System.Drawing.Point(149, 53);
-            this.txtSpaghettiQuant.Name = "txtSpaghettiQuant";
-            this.txtSpaghettiQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtSpaghettiQuant.TabIndex = 10;
-            this.txtSpaghettiQuant.Visible = false;
             // 
             // chkPizza
             // 
@@ -440,13 +441,13 @@
             // 
             // gbxSalad
             // 
-            this.gbxSalad.Controls.Add(this.txtCapreseQuant);
+            this.gbxSalad.Controls.Add(this.cbxCapreseQuant);
+            this.gbxSalad.Controls.Add(this.cbxSpringQuant);
+            this.gbxSalad.Controls.Add(this.cbxCaesarQuant);
+            this.gbxSalad.Controls.Add(this.cbxHouseQuant);
             this.gbxSalad.Controls.Add(this.label20);
-            this.gbxSalad.Controls.Add(this.txtSpringQuant);
             this.gbxSalad.Controls.Add(this.label19);
-            this.gbxSalad.Controls.Add(this.txtCaesarQuant);
             this.gbxSalad.Controls.Add(this.label18);
-            this.gbxSalad.Controls.Add(this.txtHouseQuant);
             this.gbxSalad.Controls.Add(this.label17);
             this.gbxSalad.Controls.Add(this.chkCaprese);
             this.gbxSalad.Controls.Add(this.chkSpringGreens);
@@ -454,19 +455,11 @@
             this.gbxSalad.Controls.Add(this.chkHouseSalad);
             this.gbxSalad.Location = new System.Drawing.Point(624, 26);
             this.gbxSalad.Name = "gbxSalad";
-            this.gbxSalad.Size = new System.Drawing.Size(256, 279);
+            this.gbxSalad.Size = new System.Drawing.Size(281, 279);
             this.gbxSalad.TabIndex = 1;
             this.gbxSalad.TabStop = false;
             this.gbxSalad.Text = "Salad";
             this.gbxSalad.Visible = false;
-            // 
-            // txtCapreseQuant
-            // 
-            this.txtCapreseQuant.Location = new System.Drawing.Point(138, 224);
-            this.txtCapreseQuant.Name = "txtCapreseQuant";
-            this.txtCapreseQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCapreseQuant.TabIndex = 19;
-            this.txtCapreseQuant.Visible = false;
             // 
             // label20
             // 
@@ -477,14 +470,6 @@
             this.label20.TabIndex = 18;
             this.label20.Text = "$9.95";
             // 
-            // txtSpringQuant
-            // 
-            this.txtSpringQuant.Location = new System.Drawing.Point(136, 160);
-            this.txtSpringQuant.Name = "txtSpringQuant";
-            this.txtSpringQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtSpringQuant.TabIndex = 17;
-            this.txtSpringQuant.Visible = false;
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -494,14 +479,6 @@
             this.label19.TabIndex = 16;
             this.label19.Text = "$8.45";
             // 
-            // txtCaesarQuant
-            // 
-            this.txtCaesarQuant.Location = new System.Drawing.Point(136, 102);
-            this.txtCaesarQuant.Name = "txtCaesarQuant";
-            this.txtCaesarQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCaesarQuant.TabIndex = 15;
-            this.txtCaesarQuant.Visible = false;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -510,14 +487,6 @@
             this.label18.Size = new System.Drawing.Size(44, 17);
             this.label18.TabIndex = 14;
             this.label18.Text = "$7.95";
-            // 
-            // txtHouseQuant
-            // 
-            this.txtHouseQuant.Location = new System.Drawing.Point(136, 39);
-            this.txtHouseQuant.Name = "txtHouseQuant";
-            this.txtHouseQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtHouseQuant.TabIndex = 13;
-            this.txtHouseQuant.Visible = false;
             // 
             // label17
             // 
@@ -574,12 +543,9 @@
             // 
             // gbxDrinks
             // 
-            this.gbxDrinks.Controls.Add(this.comboBox3);
             this.gbxDrinks.Controls.Add(this.label4);
-            this.gbxDrinks.Controls.Add(this.comboBox2);
             this.gbxDrinks.Controls.Add(this.label3);
             this.gbxDrinks.Controls.Add(this.label2);
-            this.gbxDrinks.Controls.Add(this.comboBox1);
             this.gbxDrinks.Location = new System.Drawing.Point(624, 350);
             this.gbxDrinks.Name = "gbxDrinks";
             this.gbxDrinks.Size = new System.Drawing.Size(256, 188);
@@ -587,15 +553,6 @@
             this.gbxDrinks.TabStop = false;
             this.gbxDrinks.Text = "Drinks";
             this.gbxDrinks.Visible = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(99, 146);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 15;
             // 
             // label4
             // 
@@ -605,19 +562,6 @@
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 14;
             this.label4.Text = "Wine";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "test",
-            "test2",
-            "test3"});
-            this.comboBox2.Location = new System.Drawing.Point(99, 94);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 13;
             // 
             // label3
             // 
@@ -636,20 +580,6 @@
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Soft Drinks";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Coke",
-            "Pepsi",
-            "Sprite",
-            "Whatever"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
             // 
             // label1
             // 
@@ -767,6 +697,216 @@
             this.btnSearchOrder.Visible = false;
             this.btnSearchOrder.Click += new System.EventHandler(this.btnSearchOrder_Click);
             // 
+            // cbxPenneQuant
+            // 
+            this.cbxPenneQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPenneQuant.FormattingEnabled = true;
+            this.cbxPenneQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxPenneQuant.Location = new System.Drawing.Point(144, 311);
+            this.cbxPenneQuant.Name = "cbxPenneQuant";
+            this.cbxPenneQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxPenneQuant.TabIndex = 36;
+            this.cbxPenneQuant.Visible = false;
+            // 
+            // cbxCarbonaraQuant
+            // 
+            this.cbxCarbonaraQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCarbonaraQuant.FormattingEnabled = true;
+            this.cbxCarbonaraQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxCarbonaraQuant.Location = new System.Drawing.Point(141, 383);
+            this.cbxCarbonaraQuant.Name = "cbxCarbonaraQuant";
+            this.cbxCarbonaraQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxCarbonaraQuant.TabIndex = 37;
+            this.cbxCarbonaraQuant.Visible = false;
+            // 
+            // cbxPicattaQuant
+            // 
+            this.cbxPicattaQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPicattaQuant.FormattingEnabled = true;
+            this.cbxPicattaQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxPicattaQuant.Location = new System.Drawing.Point(455, 49);
+            this.cbxPicattaQuant.Name = "cbxPicattaQuant";
+            this.cbxPicattaQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxPicattaQuant.TabIndex = 38;
+            this.cbxPicattaQuant.Visible = false;
+            // 
+            // cbxMarsalaQuant
+            // 
+            this.cbxMarsalaQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMarsalaQuant.FormattingEnabled = true;
+            this.cbxMarsalaQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxMarsalaQuant.Location = new System.Drawing.Point(455, 118);
+            this.cbxMarsalaQuant.Name = "cbxMarsalaQuant";
+            this.cbxMarsalaQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxMarsalaQuant.TabIndex = 39;
+            this.cbxMarsalaQuant.Visible = false;
+            // 
+            // cbxCioppinoQuant
+            // 
+            this.cbxCioppinoQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCioppinoQuant.FormattingEnabled = true;
+            this.cbxCioppinoQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxCioppinoQuant.Location = new System.Drawing.Point(455, 176);
+            this.cbxCioppinoQuant.Name = "cbxCioppinoQuant";
+            this.cbxCioppinoQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxCioppinoQuant.TabIndex = 40;
+            this.cbxCioppinoQuant.Visible = false;
+            // 
+            // cbxPizzaQuant
+            // 
+            this.cbxPizzaQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPizzaQuant.FormattingEnabled = true;
+            this.cbxPizzaQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxPizzaQuant.Location = new System.Drawing.Point(455, 243);
+            this.cbxPizzaQuant.Name = "cbxPizzaQuant";
+            this.cbxPizzaQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxPizzaQuant.TabIndex = 41;
+            this.cbxPizzaQuant.Visible = false;
+            // 
+            // cbxHouseQuant
+            // 
+            this.cbxHouseQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxHouseQuant.FormattingEnabled = true;
+            this.cbxHouseQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxHouseQuant.Location = new System.Drawing.Point(145, 40);
+            this.cbxHouseQuant.Name = "cbxHouseQuant";
+            this.cbxHouseQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxHouseQuant.TabIndex = 19;
+            this.cbxHouseQuant.Visible = false;
+            // 
+            // cbxCaesarQuant
+            // 
+            this.cbxCaesarQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCaesarQuant.FormattingEnabled = true;
+            this.cbxCaesarQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxCaesarQuant.Location = new System.Drawing.Point(147, 114);
+            this.cbxCaesarQuant.Name = "cbxCaesarQuant";
+            this.cbxCaesarQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxCaesarQuant.TabIndex = 20;
+            this.cbxCaesarQuant.Visible = false;
+            // 
+            // cbxSpringQuant
+            // 
+            this.cbxSpringQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSpringQuant.FormattingEnabled = true;
+            this.cbxSpringQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxSpringQuant.Location = new System.Drawing.Point(147, 173);
+            this.cbxSpringQuant.Name = "cbxSpringQuant";
+            this.cbxSpringQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxSpringQuant.TabIndex = 21;
+            this.cbxSpringQuant.Visible = false;
+            // 
+            // cbxCapreseQuant
+            // 
+            this.cbxCapreseQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCapreseQuant.FormattingEnabled = true;
+            this.cbxCapreseQuant.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbxCapreseQuant.Location = new System.Drawing.Point(147, 230);
+            this.cbxCapreseQuant.Name = "cbxCapreseQuant";
+            this.cbxCapreseQuant.Size = new System.Drawing.Size(121, 24);
+            this.cbxCapreseQuant.TabIndex = 22;
+            this.cbxCapreseQuant.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -822,26 +962,23 @@
         private System.Windows.Forms.GroupBox gbxDrinks;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtPicattaQuant;
-        private System.Windows.Forms.TextBox txtMarsalaQuant;
-        private System.Windows.Forms.TextBox txtCioppinoQuant;
-        private System.Windows.Forms.TextBox txtPizzaQuant;
-        private System.Windows.Forms.TextBox txtCarbonaraQuant;
-        private System.Windows.Forms.TextBox txtLinguiniQuant;
-        private System.Windows.Forms.TextBox txtLasagnaQuant;
-        private System.Windows.Forms.TextBox txtPenneQuant;
-        private System.Windows.Forms.TextBox txtRavioliQuant;
-        private System.Windows.Forms.TextBox txtSpaghettiQuant;
+        //private System.Windows.Forms.TextBox txtPicattaQuant;
+        //private System.Windows.Forms.TextBox txtMarsalaQuant;
+        //private System.Windows.Forms.TextBox txtCioppinoQuant;
+        //private System.Windows.Forms.TextBox txtPizzaQuant;
+        //private System.Windows.Forms.TextBox txtCarbonaraQuant;
+        //private System.Windows.Forms.TextBox txtLinguiniQuant;
+        //private System.Windows.Forms.TextBox txtLasagnaQuant;
+        //private System.Windows.Forms.TextBox txtPenneQuant;
+        //private System.Windows.Forms.TextBox txtRavioliQuant;
+        //private System.Windows.Forms.TextBox txtSpaghettiQuant;
         private System.Windows.Forms.Button btnBuildOrder;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ListBox lstOrderInProgress;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Label label6;
@@ -856,18 +993,32 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtHouseQuant;
+        //private System.Windows.Forms.TextBox txtHouseQuant;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtCaesarQuant;
+        //private System.Windows.Forms.TextBox txtCaesarQuant;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtSpringQuant;
+        //private System.Windows.Forms.TextBox txtSpringQuant;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtCapreseQuant;
+        //private System.Windows.Forms.TextBox txtCapreseQuant;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnEditOrder;
         private System.Windows.Forms.TextBox txtOrderNum;
         private System.Windows.Forms.Label lblOrderNum;
         private System.Windows.Forms.Button btnSearchOrder;
+        private System.Windows.Forms.ComboBox cbxSpaghettiQuant;
+        private System.Windows.Forms.ComboBox cbxLinguiniQuant;
+        private System.Windows.Forms.ComboBox cbxRavioliQuant;
+        private System.Windows.Forms.ComboBox cbxLasagnaQuant;
+        private System.Windows.Forms.ComboBox cbxCioppinoQuant;
+        private System.Windows.Forms.ComboBox cbxMarsalaQuant;
+        private System.Windows.Forms.ComboBox cbxPicattaQuant;
+        private System.Windows.Forms.ComboBox cbxCarbonaraQuant;
+        private System.Windows.Forms.ComboBox cbxPenneQuant;
+        private System.Windows.Forms.ComboBox cbxPizzaQuant;
+        private System.Windows.Forms.ComboBox cbxHouseQuant;
+        private System.Windows.Forms.ComboBox cbxCapreseQuant;
+        private System.Windows.Forms.ComboBox cbxSpringQuant;
+        private System.Windows.Forms.ComboBox cbxCaesarQuant;
     }
 }
 
