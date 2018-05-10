@@ -62,6 +62,14 @@
             this.chkLinguini = new System.Windows.Forms.CheckBox();
             this.chkSpaghetti = new System.Windows.Forms.CheckBox();
             this.gbxSalad = new System.Windows.Forms.GroupBox();
+            this.txtCapreseQuant = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtSpringQuant = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtCaesarQuant = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtHouseQuant = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.chkCaprese = new System.Windows.Forms.CheckBox();
             this.chkSpringGreens = new System.Windows.Forms.CheckBox();
             this.chkCaesar = new System.Windows.Forms.CheckBox();
@@ -78,17 +86,13 @@
             this.btnBuildOrder = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lstOrderInProgress = new System.Windows.Forms.ListBox();
-            this.btnNext = new System.Windows.Forms.Button();
+            this.btnNewOrder = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.lblTimer = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtHouseQuant = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtCaesarQuant = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtSpringQuant = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtCapreseQuant = new System.Windows.Forms.TextBox();
+            this.btnEditOrder = new System.Windows.Forms.Button();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
+            this.lblOrderNum = new System.Windows.Forms.Label();
+            this.btnSearchOrder = new System.Windows.Forms.Button();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
@@ -128,7 +132,7 @@
             this.gbxEntree.Controls.Add(this.chkLasagna);
             this.gbxEntree.Controls.Add(this.chkLinguini);
             this.gbxEntree.Controls.Add(this.chkSpaghetti);
-            this.gbxEntree.Location = new System.Drawing.Point(12, 80);
+            this.gbxEntree.Location = new System.Drawing.Point(12, 136);
             this.gbxEntree.Name = "gbxEntree";
             this.gbxEntree.Size = new System.Drawing.Size(575, 458);
             this.gbxEntree.TabIndex = 0;
@@ -318,7 +322,7 @@
             // 
             // txtSpaghettiQuant
             // 
-            this.txtSpaghettiQuant.Location = new System.Drawing.Point(145, 53);
+            this.txtSpaghettiQuant.Location = new System.Drawing.Point(149, 53);
             this.txtSpaghettiQuant.Name = "txtSpaghettiQuant";
             this.txtSpaghettiQuant.Size = new System.Drawing.Size(100, 22);
             this.txtSpaghettiQuant.TabIndex = 10;
@@ -455,6 +459,74 @@
             this.gbxSalad.TabStop = false;
             this.gbxSalad.Text = "Salad";
             this.gbxSalad.Visible = false;
+            // 
+            // txtCapreseQuant
+            // 
+            this.txtCapreseQuant.Location = new System.Drawing.Point(138, 224);
+            this.txtCapreseQuant.Name = "txtCapreseQuant";
+            this.txtCapreseQuant.Size = new System.Drawing.Size(100, 22);
+            this.txtCapreseQuant.TabIndex = 19;
+            this.txtCapreseQuant.Visible = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(83, 247);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(44, 17);
+            this.label20.TabIndex = 18;
+            this.label20.Text = "$9.95";
+            // 
+            // txtSpringQuant
+            // 
+            this.txtSpringQuant.Location = new System.Drawing.Point(136, 160);
+            this.txtSpringQuant.Name = "txtSpringQuant";
+            this.txtSpringQuant.Size = new System.Drawing.Size(100, 22);
+            this.txtSpringQuant.TabIndex = 17;
+            this.txtSpringQuant.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(87, 189);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 17);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "$8.45";
+            // 
+            // txtCaesarQuant
+            // 
+            this.txtCaesarQuant.Location = new System.Drawing.Point(136, 102);
+            this.txtCaesarQuant.Name = "txtCaesarQuant";
+            this.txtCaesarQuant.Size = new System.Drawing.Size(100, 22);
+            this.txtCaesarQuant.TabIndex = 15;
+            this.txtCaesarQuant.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(84, 126);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(44, 17);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "$7.95";
+            // 
+            // txtHouseQuant
+            // 
+            this.txtHouseQuant.Location = new System.Drawing.Point(136, 39);
+            this.txtHouseQuant.Name = "txtHouseQuant";
+            this.txtHouseQuant.Size = new System.Drawing.Size(100, 22);
+            this.txtHouseQuant.TabIndex = 13;
+            this.txtHouseQuant.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(84, 64);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 17);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "$5.99";
             // 
             // chkCaprese
             // 
@@ -597,7 +669,7 @@
             // 
             // btnBuildOrder
             // 
-            this.btnBuildOrder.Location = new System.Drawing.Point(366, 575);
+            this.btnBuildOrder.Location = new System.Drawing.Point(360, 616);
             this.btnBuildOrder.Name = "btnBuildOrder";
             this.btnBuildOrder.Size = new System.Drawing.Size(75, 47);
             this.btnBuildOrder.TabIndex = 5;
@@ -608,7 +680,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(534, 590);
+            this.btnReset.Location = new System.Drawing.Point(534, 623);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 32);
             this.btnReset.TabIndex = 6;
@@ -626,15 +698,15 @@
             this.lstOrderInProgress.TabIndex = 7;
             this.lstOrderInProgress.Visible = false;
             // 
-            // btnNext
+            // btnNewOrder
             // 
-            this.btnNext.Location = new System.Drawing.Point(298, 33);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(95, 41);
-            this.btnNext.TabIndex = 8;
-            this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNewOrder.Location = new System.Drawing.Point(93, 78);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(95, 41);
+            this.btnNewOrder.TabIndex = 8;
+            this.btnNewOrder.Text = "New Order";
+            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click_1);
             // 
             // btnPay
             // 
@@ -656,82 +728,57 @@
             this.lblTimer.Size = new System.Drawing.Size(2, 19);
             this.lblTimer.TabIndex = 10;
             // 
-            // label17
+            // btnEditOrder
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(84, 64);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 17);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "$5.99";
+            this.btnEditOrder.Location = new System.Drawing.Point(208, 78);
+            this.btnEditOrder.Name = "btnEditOrder";
+            this.btnEditOrder.Size = new System.Drawing.Size(87, 41);
+            this.btnEditOrder.TabIndex = 11;
+            this.btnEditOrder.Text = "Edit Order";
+            this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
-            // txtHouseQuant
+            // txtOrderNum
             // 
-            this.txtHouseQuant.Location = new System.Drawing.Point(136, 39);
-            this.txtHouseQuant.Name = "txtHouseQuant";
-            this.txtHouseQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtHouseQuant.TabIndex = 13;
-            this.txtHouseQuant.Visible = false;
+            this.txtOrderNum.Location = new System.Drawing.Point(359, 97);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.Size = new System.Drawing.Size(100, 22);
+            this.txtOrderNum.TabIndex = 12;
+            this.txtOrderNum.Visible = false;
             // 
-            // label18
+            // lblOrderNum
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(84, 126);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 17);
-            this.label18.TabIndex = 14;
-            this.label18.Text = "$7.95";
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Location = new System.Drawing.Point(356, 72);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(214, 17);
+            this.lblOrderNum.TabIndex = 13;
+            this.lblOrderNum.Text = "Please enter your order number:";
+            this.lblOrderNum.Visible = false;
             // 
-            // txtCaesarQuant
+            // btnSearchOrder
             // 
-            this.txtCaesarQuant.Location = new System.Drawing.Point(136, 102);
-            this.txtCaesarQuant.Name = "txtCaesarQuant";
-            this.txtCaesarQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCaesarQuant.TabIndex = 15;
-            this.txtCaesarQuant.Visible = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(87, 189);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 17);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "$8.45";
-            // 
-            // txtSpringQuant
-            // 
-            this.txtSpringQuant.Location = new System.Drawing.Point(136, 160);
-            this.txtSpringQuant.Name = "txtSpringQuant";
-            this.txtSpringQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtSpringQuant.TabIndex = 17;
-            this.txtSpringQuant.Visible = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(83, 247);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 17);
-            this.label20.TabIndex = 18;
-            this.label20.Text = "$9.95";
-            // 
-            // txtCapreseQuant
-            // 
-            this.txtCapreseQuant.Location = new System.Drawing.Point(138, 224);
-            this.txtCapreseQuant.Name = "txtCapreseQuant";
-            this.txtCapreseQuant.Size = new System.Drawing.Size(100, 22);
-            this.txtCapreseQuant.TabIndex = 19;
-            this.txtCapreseQuant.Visible = false;
+            this.btnSearchOrder.Location = new System.Drawing.Point(485, 96);
+            this.btnSearchOrder.Name = "btnSearchOrder";
+            this.btnSearchOrder.Size = new System.Drawing.Size(75, 34);
+            this.btnSearchOrder.TabIndex = 14;
+            this.btnSearchOrder.Text = "Search";
+            this.btnSearchOrder.UseVisualStyleBackColor = true;
+            this.btnSearchOrder.Visible = false;
+            this.btnSearchOrder.Click += new System.EventHandler(this.btnSearchOrder_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 698);
+            this.Controls.Add(this.btnSearchOrder);
+            this.Controls.Add(this.lblOrderNum);
+            this.Controls.Add(this.txtOrderNum);
+            this.Controls.Add(this.btnEditOrder);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.btnPay);
-            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.lstOrderInProgress);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnBuildOrder);
@@ -788,7 +835,7 @@
         private System.Windows.Forms.Button btnBuildOrder;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ListBox lstOrderInProgress;
-        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -817,6 +864,10 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtCapreseQuant;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnEditOrder;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.Label lblOrderNum;
+        private System.Windows.Forms.Button btnSearchOrder;
     }
 }
 

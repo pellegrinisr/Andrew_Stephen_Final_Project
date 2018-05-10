@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Andrew_Stephen_Final_Project
 {
     public partial class frmMain : Form
     {
         //global variables
-        private frmConfirmation test = new frmConfirmation();
+        private frmConfirmation confrimForm = new frmConfirmation();
         private frmSplash splashWindow = new frmSplash();
+        private StreamReader infile;
+        private StreamWriter outfile;
+        private int orderNum = STARTING_ORDER;
         
 
         //global constants
@@ -35,6 +39,9 @@ namespace Andrew_Stephen_Final_Project
         private const double SPRING = 8.45;
         private const double CAPRESE = 9.95;
 
+        //for the order #
+        private const int STARTING_ORDER = 1000;
+
         public frmMain()
         {
             InitializeComponent();
@@ -44,12 +51,12 @@ namespace Andrew_Stephen_Final_Project
         {
             lblTimer.Text = DateTime.Now.ToString();
             splashWindow.ShowDialog();
+            
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            test.Show();
-            test.txtTest.Text = "did this work?";
+           
         }
 
         //event handler for Spaghetti check box
@@ -60,6 +67,7 @@ namespace Andrew_Stephen_Final_Project
                 txtSpaghettiQuant.Visible = true;
             else
                 txtSpaghettiQuant.Visible = false;
+            
         }
 
         //event handler for linguini check box
@@ -258,35 +266,48 @@ namespace Andrew_Stephen_Final_Project
             if (isValid == true)
             {
                 if (chkSpaghetti.Checked == true)
-                    lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + txtSpaghettiQuant.Text + ", Price=" + (int.Parse(txtSpaghettiQuant.Text) * SPAGHETTI));
-                    
-                if (chkLinguini.Checked == true)  
-                    lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
-
+                    //confirmForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(this.txtSpaghettiQuant.Text) * this.SPAGHETTI));
+                    confrimForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(txtSpaghettiQuant.Text) * SPAGHETTI));
+                if (chkLinguini.Checked == true)
+                    //lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
+                    confrimForm.lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
                 if (chkLasagna.Checked == true)
-                    lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
+                    confrimForm.lstOrderInProgress.Items.Add("Lasagna, Quantithy=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
+                    //lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
                 if (chkRavioli.Checked == true)  
-                    lstOrderInProgress.Items.Add("Ravioli, Quantity=" + txtRavioliQuant.Text + ", Price=" + (int.Parse(txtRavioliQuant.Text)* RAVIOLI));
+                    confrimForm.lstOrderInProgress.Items.Add("Ravioli, Quantity=" + txtRavioliQuant.Text + ", Price=" + (int.Parse(txtRavioliQuant.Text) * RAVIOLI));
                 if (chkPenne.Checked == true)
-                    lstOrderInProgress.Items.Add("Penne, Quantity=" + txtPenneQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text) * PENNE));
+                    confrimForm.lstOrderInProgress.Items.Add("Penne, Quantity=" + txtPenneQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text) * PENNE));
                 if (chkCarbonara.Checked == true)
-                    lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text)* PENNE));
+                    confrimForm.lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text) * PENNE));
+                    //lstOrderInProgress.Items.Add("Carbonara, Quantity=" + txtCarbonaraQuant.Text + ", Price=" + (int.Parse(txtPenneQuant.Text)* PENNE));
                 if (chkPicatta.Checked == true)
-                    lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
+                    confrimForm.lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
+                    //lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
                 if (chkMarsala.Checked == true) 
-                    lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text)* MARSALA));
+                    confrimForm.lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text) * MARSALA));
+                //lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text)* MARSALA));
                 if (chkCioppino.Checked == true)  
-                    lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
+                   confrimForm.lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
+                // lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
                 if (chkPizza.Checked == true) 
-                    lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
+                   confrimForm.lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
+                // lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
                 if (chkHouseSalad.Checked == true)
-                    lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
+                    confrimForm.lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
+                //lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
                 if (chkCaesar.Checked == true)
-                    lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
+                   confrimForm.lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
+                // lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
                 if (chkSpringGreens.Checked == true)
-                    lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
+                   confrimForm.lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
+                // lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
                 if (chkCaprese.Checked == true)
-                    lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
+                    confrimForm.lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
+                //lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
+
+                //show the frmConfirmation object with the filled in list box
+                confrimForm.Show();
             }
             else
                 MessageBox.Show("Please fix the errors before continuing.");
@@ -295,21 +316,64 @@ namespace Andrew_Stephen_Final_Project
         //event handler
         //button to be clicked after entering name
         //will make the rest of the controls on the form visible
-        private void btnNext_Click(object sender, EventArgs e)
+        private void btnNewOrder_Click_1(object sender, EventArgs e)
+        {
+                if (txtName.Text == "")
+                    MessageBox.Show("Please enter your name.");
+                else
+                {
+                    gbxEntree.Visible = true;
+                    gbxSalad.Visible = true;
+                    gbxDrinks.Visible = true;
+                    btnBuildOrder.Visible = true;
+                    btnPay.Visible = true;
+                    btnReset.Visible = true;
+                    lstOrderInProgress.Visible = true;
+                }
+            }
+
+        //event handler for edit order button
+        //will allow the user to edit a previously submitted order
+        private void btnEditOrder_Click(object sender, EventArgs e)
         {
             if (txtName.Text == "")
                 MessageBox.Show("Please enter your name.");
             else
             {
-                gbxEntree.Visible = true;
-                gbxSalad.Visible = true;
-                gbxDrinks.Visible = true;
-                btnBuildOrder.Visible = true;
-                btnPay.Visible = true;
-                btnReset.Visible = true;
-                lstOrderInProgress.Visible = true;
+                txtOrderNum.Visible = true;
+                lblOrderNum.Visible = true;
+                btnSearchOrder.Visible = true;
             }
         }
-        
+
+        //event handler for search button
+        //will search for receipt of previous order
+        private void btnSearchOrder_Click(object sender, EventArgs e)
+        {
+            if (txtOrderNum.Text == "")
+                MessageBox.Show("Please enter an order number.");
+            else if (!int.TryParse(txtOrderNum.Text, out int userInput))
+                MessageBox.Show("Please enter a valid order number.");
+            else
+            {
+                string filename = txtOrderNum.Text + ".txt";
+
+                try
+                {
+                    infile = File.OpenText(filename);
+
+                    while (!infile.EndOfStream)
+                    {
+                        lstOrderInProgress.Items.Add(infile.ReadLine());
+                    }
+                    lstOrderInProgress.Visible = true;
+                }
+                catch
+                {
+                    MessageBox.Show("File does not exist.");
+                }
+            }
+        }
     }
 }
+

@@ -12,9 +12,17 @@ namespace Andrew_Stephen_Final_Project
 {
     public partial class frmConfirmation : Form
     {
+       
+
         public frmConfirmation()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            lstOrderInProgress.Items.Clear();
+            this.Hide();
         }
     }
 }

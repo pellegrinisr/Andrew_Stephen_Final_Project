@@ -28,43 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTest = new System.Windows.Forms.TextBox();
+            this.lstOrderInProgress = new System.Windows.Forms.ListBox();
+            this.btnEditOrder = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lstOrderInProgress
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(316, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Test";
+            this.lstOrderInProgress.FormattingEnabled = true;
+            this.lstOrderInProgress.ItemHeight = 16;
+            this.lstOrderInProgress.Location = new System.Drawing.Point(114, 40);
+            this.lstOrderInProgress.Name = "lstOrderInProgress";
+            this.lstOrderInProgress.Size = new System.Drawing.Size(334, 420);
+            this.lstOrderInProgress.TabIndex = 0;
             // 
-            // txtTest
+            // btnEditOrder
             // 
-            this.txtTest.Location = new System.Drawing.Point(394, 172);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.Size = new System.Drawing.Size(100, 22);
-            this.txtTest.TabIndex = 1;
+            this.btnEditOrder.Location = new System.Drawing.Point(653, 40);
+            this.btnEditOrder.Name = "btnEditOrder";
+            this.btnEditOrder.Size = new System.Drawing.Size(106, 54);
+            this.btnEditOrder.TabIndex = 1;
+            this.btnEditOrder.Text = "Edit Order";
+            this.btnEditOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.Location = new System.Drawing.Point(653, 171);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(106, 57);
+            this.btnCheckOut.TabIndex = 2;
+            this.btnCheckOut.Text = "Check Out";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(653, 313);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 52);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 421);
-            this.Controls.Add(this.txtTest);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(969, 586);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnCheckOut);
+            this.Controls.Add(this.btnEditOrder);
+            this.Controls.Add(this.lstOrderInProgress);
             this.Name = "frmConfirmation";
             this.Text = "frmConfirmation";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtTest;
+        public System.Windows.Forms.ListBox lstOrderInProgress;
+        private System.Windows.Forms.Button btnEditOrder;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
