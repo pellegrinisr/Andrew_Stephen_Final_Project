@@ -75,8 +75,22 @@
             this.chkCaesar = new System.Windows.Forms.CheckBox();
             this.chkHouseSalad = new System.Windows.Forms.CheckBox();
             this.gbxDrinks = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.nudWhiteQuant = new System.Windows.Forms.NumericUpDown();
+            this.nudRedQuant = new System.Windows.Forms.NumericUpDown();
+            this.chkWhite = new System.Windows.Forms.CheckBox();
+            this.chkRed = new System.Windows.Forms.CheckBox();
+            this.radNo = new System.Windows.Forms.RadioButton();
+            this.radYes = new System.Windows.Forms.RadioButton();
+            this.label24 = new System.Windows.Forms.Label();
+            this.nudSpriteQuant = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
+            this.chkSprite = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.nudCokeQuant = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
+            this.chkCoke = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -90,9 +104,17 @@
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.btnSearchOrder = new System.Windows.Forms.Button();
             this.lstMainFormOrderItems = new System.Windows.Forms.ListBox();
+            this.pnlAlcohol = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWhiteQuant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).BeginInit();
+            this.pnlAlcohol.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxEntree
@@ -753,39 +775,244 @@
             // 
             // gbxDrinks
             // 
-            this.gbxDrinks.Controls.Add(this.label4);
-            this.gbxDrinks.Controls.Add(this.label3);
+            this.gbxDrinks.Controls.Add(this.pnlAlcohol);
+            this.gbxDrinks.Controls.Add(this.radNo);
+            this.gbxDrinks.Controls.Add(this.radYes);
+            this.gbxDrinks.Controls.Add(this.label24);
+            this.gbxDrinks.Controls.Add(this.nudSpriteQuant);
+            this.gbxDrinks.Controls.Add(this.label23);
+            this.gbxDrinks.Controls.Add(this.chkSprite);
+            this.gbxDrinks.Controls.Add(this.label22);
+            this.gbxDrinks.Controls.Add(this.nudCokeQuant);
+            this.gbxDrinks.Controls.Add(this.label21);
+            this.gbxDrinks.Controls.Add(this.chkCoke);
             this.gbxDrinks.Controls.Add(this.label2);
-            this.gbxDrinks.Location = new System.Drawing.Point(624, 350);
+            this.gbxDrinks.Location = new System.Drawing.Point(624, 314);
             this.gbxDrinks.Name = "gbxDrinks";
-            this.gbxDrinks.Size = new System.Drawing.Size(256, 188);
+            this.gbxDrinks.Size = new System.Drawing.Size(302, 372);
             this.gbxDrinks.TabIndex = 2;
             this.gbxDrinks.TabStop = false;
             this.gbxDrinks.Text = "Drinks";
             this.gbxDrinks.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(141, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Quantity";
+            // 
+            // nudWhiteQuant
+            // 
+            this.nudWhiteQuant.Location = new System.Drawing.Point(142, 74);
+            this.nudWhiteQuant.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudWhiteQuant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudWhiteQuant.Name = "nudWhiteQuant";
+            this.nudWhiteQuant.Size = new System.Drawing.Size(60, 22);
+            this.nudWhiteQuant.TabIndex = 28;
+            this.nudWhiteQuant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudWhiteQuant.Visible = false;
+            // 
+            // nudRedQuant
+            // 
+            this.nudRedQuant.Location = new System.Drawing.Point(144, 26);
+            this.nudRedQuant.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudRedQuant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRedQuant.Name = "nudRedQuant";
+            this.nudRedQuant.Size = new System.Drawing.Size(58, 22);
+            this.nudRedQuant.TabIndex = 27;
+            this.nudRedQuant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudRedQuant.Visible = false;
+            // 
+            // chkWhite
+            // 
+            this.chkWhite.AutoSize = true;
+            this.chkWhite.Location = new System.Drawing.Point(10, 74);
+            this.chkWhite.Name = "chkWhite";
+            this.chkWhite.Size = new System.Drawing.Size(111, 21);
+            this.chkWhite.TabIndex = 26;
+            this.chkWhite.Text = "House White";
+            this.chkWhite.UseVisualStyleBackColor = true;
+            this.chkWhite.CheckedChanged += new System.EventHandler(this.chkWhite_CheckedChanged);
+            // 
+            // chkRed
+            // 
+            this.chkRed.AutoSize = true;
+            this.chkRed.Location = new System.Drawing.Point(10, 27);
+            this.chkRed.Name = "chkRed";
+            this.chkRed.Size = new System.Drawing.Size(101, 21);
+            this.chkRed.TabIndex = 25;
+            this.chkRed.Text = "House Red";
+            this.chkRed.UseVisualStyleBackColor = true;
+            this.chkRed.CheckedChanged += new System.EventHandler(this.chkRed_CheckedChanged);
+            // 
+            // radNo
+            // 
+            this.radNo.AutoSize = true;
+            this.radNo.Checked = true;
+            this.radNo.Location = new System.Drawing.Point(87, 218);
+            this.radNo.Name = "radNo";
+            this.radNo.Size = new System.Drawing.Size(51, 21);
+            this.radNo.TabIndex = 24;
+            this.radNo.TabStop = true;
+            this.radNo.Text = " No";
+            this.radNo.UseVisualStyleBackColor = true;
+            // 
+            // radYes
+            // 
+            this.radYes.AutoSize = true;
+            this.radYes.Location = new System.Drawing.Point(21, 218);
+            this.radYes.Name = "radYes";
+            this.radYes.Size = new System.Drawing.Size(53, 21);
+            this.radYes.TabIndex = 23;
+            this.radYes.TabStop = true;
+            this.radYes.Text = "Yes";
+            this.radYes.UseVisualStyleBackColor = true;
+            this.radYes.CheckedChanged += new System.EventHandler(this.radYes_CheckedChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(12, 192);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(117, 17);
+            this.label24.TabIndex = 22;
+            this.label24.Text = "Are you over 21?";
+            // 
+            // nudSpriteQuant
+            // 
+            this.nudSpriteQuant.Location = new System.Drawing.Point(155, 124);
+            this.nudSpriteQuant.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudSpriteQuant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSpriteQuant.Name = "nudSpriteQuant";
+            this.nudSpriteQuant.Size = new System.Drawing.Size(54, 22);
+            this.nudSpriteQuant.TabIndex = 21;
+            this.nudSpriteQuant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudSpriteQuant.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(74, 147);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(44, 17);
+            this.label23.TabIndex = 20;
+            this.label23.Text = "$1.99";
+            // 
+            // chkSprite
+            // 
+            this.chkSprite.AutoSize = true;
+            this.chkSprite.Location = new System.Drawing.Point(21, 117);
+            this.chkSprite.Name = "chkSprite";
+            this.chkSprite.Size = new System.Drawing.Size(67, 21);
+            this.chkSprite.TabIndex = 19;
+            this.chkSprite.Text = "Sprite";
+            this.chkSprite.UseVisualStyleBackColor = true;
+            this.chkSprite.CheckedChanged += new System.EventHandler(this.chkSprite_CheckedChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(73, 88);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 17);
+            this.label22.TabIndex = 18;
+            this.label22.Text = "$1.99";
+            // 
+            // nudCokeQuant
+            // 
+            this.nudCokeQuant.Location = new System.Drawing.Point(155, 61);
+            this.nudCokeQuant.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.nudCokeQuant.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCokeQuant.Name = "nudCokeQuant";
+            this.nudCokeQuant.Size = new System.Drawing.Size(54, 22);
+            this.nudCokeQuant.TabIndex = 17;
+            this.nudCokeQuant.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCokeQuant.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(152, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(61, 17);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Quantity";
+            // 
+            // chkCoke
+            // 
+            this.chkCoke.AutoSize = true;
+            this.chkCoke.Location = new System.Drawing.Point(21, 62);
+            this.chkCoke.Name = "chkCoke";
+            this.chkCoke.Size = new System.Drawing.Size(62, 21);
+            this.chkCoke.TabIndex = 15;
+            this.chkCoke.Text = "Coke";
+            this.chkCoke.UseVisualStyleBackColor = true;
+            this.chkCoke.CheckedChanged += new System.EventHandler(this.chkCoke_CheckedChanged);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 149);
+            this.label4.Location = new System.Drawing.Point(7, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 14;
             this.label4.Text = "Wine";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Beer";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Location = new System.Drawing.Point(12, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 11;
@@ -809,7 +1036,7 @@
             // 
             // btnBuildOrder
             // 
-            this.btnBuildOrder.Location = new System.Drawing.Point(360, 616);
+            this.btnBuildOrder.Location = new System.Drawing.Point(93, 623);
             this.btnBuildOrder.Name = "btnBuildOrder";
             this.btnBuildOrder.Size = new System.Drawing.Size(75, 47);
             this.btnBuildOrder.TabIndex = 5;
@@ -820,9 +1047,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(534, 623);
+            this.btnReset.Location = new System.Drawing.Point(248, 623);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 32);
+            this.btnReset.Size = new System.Drawing.Size(82, 47);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -840,7 +1067,7 @@
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(714, 621);
+            this.btnPay.Location = new System.Drawing.Point(1130, 599);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(93, 37);
             this.btnPay.TabIndex = 9;
@@ -901,11 +1128,45 @@
             // 
             this.lstMainFormOrderItems.FormattingEnabled = true;
             this.lstMainFormOrderItems.ItemHeight = 16;
-            this.lstMainFormOrderItems.Location = new System.Drawing.Point(932, 46);
+            this.lstMainFormOrderItems.Location = new System.Drawing.Point(945, 46);
             this.lstMainFormOrderItems.Name = "lstMainFormOrderItems";
             this.lstMainFormOrderItems.Size = new System.Drawing.Size(318, 532);
             this.lstMainFormOrderItems.TabIndex = 15;
             this.lstMainFormOrderItems.Visible = false;
+            // 
+            // pnlAlcohol
+            // 
+            this.pnlAlcohol.Controls.Add(this.label26);
+            this.pnlAlcohol.Controls.Add(this.label25);
+            this.pnlAlcohol.Controls.Add(this.label3);
+            this.pnlAlcohol.Controls.Add(this.nudWhiteQuant);
+            this.pnlAlcohol.Controls.Add(this.nudRedQuant);
+            this.pnlAlcohol.Controls.Add(this.chkWhite);
+            this.pnlAlcohol.Controls.Add(this.chkRed);
+            this.pnlAlcohol.Controls.Add(this.label4);
+            this.pnlAlcohol.Location = new System.Drawing.Point(11, 249);
+            this.pnlAlcohol.Name = "pnlAlcohol";
+            this.pnlAlcohol.Size = new System.Drawing.Size(234, 119);
+            this.pnlAlcohol.TabIndex = 30;
+            this.pnlAlcohol.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(59, 49);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 17);
+            this.label25.TabIndex = 30;
+            this.label25.Text = "$7.99";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(62, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 17);
+            this.label26.TabIndex = 31;
+            this.label26.Text = "$7.99";
             // 
             // frmMain
             // 
@@ -928,7 +1189,7 @@
             this.Controls.Add(this.gbxSalad);
             this.Controls.Add(this.gbxEntree);
             this.Name = "frmMain";
-            this.Text = "b";
+            this.Text = "Delicisio E-Ristorante";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.gbxEntree.ResumeLayout(false);
             this.gbxEntree.PerformLayout();
@@ -936,6 +1197,12 @@
             this.gbxSalad.PerformLayout();
             this.gbxDrinks.ResumeLayout(false);
             this.gbxDrinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWhiteQuant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).EndInit();
+            this.pnlAlcohol.ResumeLayout(false);
+            this.pnlAlcohol.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -976,7 +1243,6 @@
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTimer;
@@ -1019,6 +1285,24 @@
         private System.Windows.Forms.ComboBox cbxSpringQuant;
         private System.Windows.Forms.ComboBox cbxCaesarQuant;
         private System.Windows.Forms.ListBox lstMainFormOrderItems;
+        private System.Windows.Forms.CheckBox chkCoke;
+        private System.Windows.Forms.CheckBox chkSprite;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown nudCokeQuant;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nudWhiteQuant;
+        private System.Windows.Forms.NumericUpDown nudRedQuant;
+        private System.Windows.Forms.CheckBox chkWhite;
+        private System.Windows.Forms.CheckBox chkRed;
+        private System.Windows.Forms.RadioButton radNo;
+        private System.Windows.Forms.RadioButton radYes;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.NumericUpDown nudSpriteQuant;
+        private System.Windows.Forms.Panel pnlAlcohol;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
     }
 }
 

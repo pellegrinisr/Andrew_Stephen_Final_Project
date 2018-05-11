@@ -40,7 +40,11 @@ namespace Andrew_Stephen_Final_Project
         private const double CAESAR = 7.95;
         private const double SPRING = 8.45;
         private const double CAPRESE = 9.95;
-
+        //beverage prices
+        private const double COKE = 1.99;
+        private const double SPRITE = 1.99;
+        private const double WHITE = 7.99;
+        private const double RED = 7.99;
         //for the order #
         private const int STARTING_ORDER = 1000;
         public static int countOrderNum = 0;   // for the order number
@@ -202,6 +206,44 @@ namespace Andrew_Stephen_Final_Project
                 cbxCapreseQuant.Visible = false;
         }
 
+        //event handler
+        //show/hide coke quantity selector control
+        private void chkCoke_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCoke.Checked == true)
+                nudCokeQuant.Visible = true;
+            else
+                nudCokeQuant.Visible = false;
+        }
+
+        //event handler
+        //show/hide sprite quantity selector control
+        private void chkSprite_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSprite.Checked == true)
+                nudSpriteQuant.Visible = true;
+            else
+                nudSpriteQuant.Visible = false;
+        }
+        //event handler
+        //show/hide red wine quantity selector
+        private void chkRed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRed.Checked == true)
+                nudRedQuant.Visible = true;
+            else
+                nudRedQuant.Visible = false;
+        }
+        //evengt handler
+        //show/hide the white wine quantity selector
+        private void chkWhite_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkWhite.Checked == true)
+                nudWhiteQuant.Visible = true;
+            else
+                nudWhiteQuant.Visible = false;
+        }
+
         //function
         //make sure each selected check box has a quantity
         //SO FAR ONLY WORKS FOR ENTREES AND SALADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -268,12 +310,8 @@ namespace Andrew_Stephen_Final_Project
             int countArrayIndex = 0;
             newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
 
-
-            //bool isValid;
-            //isValid = validation();
-            //MessageBox.Show(isValid.ToString("c"));
-            // if (isValid == true)
-            //     {
+            lstMainFormOrderItems.Items.Clear();
+           
             if (chkSpaghetti.Checked == true)
             {
                 //create a new instance of food
@@ -462,14 +500,52 @@ namespace Andrew_Stephen_Final_Project
                 //confrimForm.lstOrderInProgress.Items.Add("Caprese, Quantity=" + cbxCapreseQuant.SelectedItem + ", Price=" + (int.Parse(cbxCapreseQuant.SelectedItem.ToString()) * CAPRESE));
                 //lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
             }
+            if (chkCoke.Checked == true)
+            {
+                Food coke = new Food();
+                coke.Name = chkCoke.Text;
+                coke.Quantity = int.Parse(nudCokeQuant.Value.ToString());
+                coke.Price = COKE;
+
+                newOrder.FoodArray[countArrayIndex] = coke;
+                countArrayIndex++;
+            }
+            if (chkSprite.Checked == true)
+            {
+                Food sprite = new Food();
+                sprite.Name = chkSprite.Text;
+                sprite.Quantity = int.Parse(nudSpriteQuant.Value.ToString());
+                sprite.Price = SPRITE;
+
+                newOrder.FoodArray[countArrayIndex] = sprite;
+                countArrayIndex++;
+            }
+            if (chkRed.Checked == true)
+            {
+                Food redWine = new Food();
+                redWine.Name = chkRed.Text;
+                redWine.Quantity = int.Parse(nudRedQuant.Value.ToString());
+                redWine.Price = RED;
+
+                newOrder.FoodArray[countArrayIndex] = redWine;
+                countArrayIndex++;
+            }
+            if (chkWhite.Checked == true)
+            {
+                Food whiteWine = new Food();
+                whiteWine.Price = WHITE;
+                whiteWine.Quantity = int.Parse(nudWhiteQuant.Value.ToString());
+                whiteWine.Name = chkWhite.Text;
+
+                newOrder.FoodArray[countArrayIndex] = whiteWine;
+                countArrayIndex++;
+            }
             
             //show the frmConfirmation object with the filled in list box
             confrimForm.Show();
             for (int i = 0; i < countArrayIndex; i++)
                 lstMainFormOrderItems.Items.Add(newOrder.FoodArray[i].ToString());
-            //}
-            //else
-              //  MessageBox.Show("Please fix the errors before continuing.");
+
         }
 
         //event handler
@@ -488,6 +564,7 @@ namespace Andrew_Stephen_Final_Project
                     btnPay.Visible = true;
                     btnReset.Visible = true;
                     lstMainFormOrderItems.Visible = true;
+                    
                     //countOrderNum++;
                    
                     
@@ -535,6 +612,17 @@ namespace Andrew_Stephen_Final_Project
                     MessageBox.Show("File does not exist.");
                 }
             }
+        }
+
+        private void radYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radYes.Checked == true)
+            {
+                pnlAlcohol.Visible = true;
+                MessageBox.Show("Be prepared to show ID.");
+            }
+            else
+                pnlAlcohol.Visible = false;
         }
 
         
