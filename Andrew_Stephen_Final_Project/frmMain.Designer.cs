@@ -75,11 +75,15 @@
             this.chkCaesar = new System.Windows.Forms.CheckBox();
             this.chkHouseSalad = new System.Windows.Forms.CheckBox();
             this.gbxDrinks = new System.Windows.Forms.GroupBox();
+            this.pnlAlcohol = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.nudWhiteQuant = new System.Windows.Forms.NumericUpDown();
             this.nudRedQuant = new System.Windows.Forms.NumericUpDown();
             this.chkWhite = new System.Windows.Forms.CheckBox();
             this.chkRed = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
@@ -90,7 +94,6 @@
             this.nudCokeQuant = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
             this.chkCoke = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -104,17 +107,16 @@
             this.lblOrderNum = new System.Windows.Forms.Label();
             this.btnSearchOrder = new System.Windows.Forms.Button();
             this.lstMainFormOrderItems = new System.Windows.Forms.ListBox();
-            this.pnlAlcohol = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblReceipt = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
+            this.pnlAlcohol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWhiteQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).BeginInit();
-            this.pnlAlcohol.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxEntree
@@ -603,7 +605,7 @@
             this.gbxSalad.Controls.Add(this.chkHouseSalad);
             this.gbxSalad.Location = new System.Drawing.Point(624, 26);
             this.gbxSalad.Name = "gbxSalad";
-            this.gbxSalad.Size = new System.Drawing.Size(281, 279);
+            this.gbxSalad.Size = new System.Drawing.Size(302, 279);
             this.gbxSalad.TabIndex = 1;
             this.gbxSalad.TabStop = false;
             this.gbxSalad.Text = "Salad";
@@ -795,6 +797,40 @@
             this.gbxDrinks.Text = "Drinks";
             this.gbxDrinks.Visible = false;
             // 
+            // pnlAlcohol
+            // 
+            this.pnlAlcohol.Controls.Add(this.label26);
+            this.pnlAlcohol.Controls.Add(this.label25);
+            this.pnlAlcohol.Controls.Add(this.label3);
+            this.pnlAlcohol.Controls.Add(this.nudWhiteQuant);
+            this.pnlAlcohol.Controls.Add(this.nudRedQuant);
+            this.pnlAlcohol.Controls.Add(this.chkWhite);
+            this.pnlAlcohol.Controls.Add(this.chkRed);
+            this.pnlAlcohol.Controls.Add(this.label4);
+            this.pnlAlcohol.Location = new System.Drawing.Point(11, 249);
+            this.pnlAlcohol.Name = "pnlAlcohol";
+            this.pnlAlcohol.Size = new System.Drawing.Size(234, 119);
+            this.pnlAlcohol.TabIndex = 30;
+            this.pnlAlcohol.Visible = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(62, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 17);
+            this.label26.TabIndex = 31;
+            this.label26.Text = "$7.99";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(59, 49);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(44, 17);
+            this.label25.TabIndex = 30;
+            this.label25.Text = "$7.99";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -871,6 +907,15 @@
             this.chkRed.Text = "House Red";
             this.chkRed.UseVisualStyleBackColor = true;
             this.chkRed.CheckedChanged += new System.EventHandler(this.chkRed_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Wine";
             // 
             // radNo
             // 
@@ -1000,15 +1045,6 @@
             this.chkCoke.UseVisualStyleBackColor = true;
             this.chkCoke.CheckedChanged += new System.EventHandler(this.chkCoke_CheckedChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 17);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Wine";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1054,6 +1090,7 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Visible = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnNewOrder
             // 
@@ -1080,7 +1117,7 @@
             // 
             this.lblTimer.AutoSize = true;
             this.lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTimer.Location = new System.Drawing.Point(449, 31);
+            this.lblTimer.Location = new System.Drawing.Point(444, 16);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(2, 19);
             this.lblTimer.TabIndex = 10;
@@ -1115,9 +1152,9 @@
             // 
             // btnSearchOrder
             // 
-            this.btnSearchOrder.Location = new System.Drawing.Point(485, 96);
+            this.btnSearchOrder.Location = new System.Drawing.Point(467, 96);
             this.btnSearchOrder.Name = "btnSearchOrder";
-            this.btnSearchOrder.Size = new System.Drawing.Size(75, 34);
+            this.btnSearchOrder.Size = new System.Drawing.Size(71, 23);
             this.btnSearchOrder.TabIndex = 14;
             this.btnSearchOrder.Text = "Search";
             this.btnSearchOrder.UseVisualStyleBackColor = true;
@@ -1134,45 +1171,33 @@
             this.lstMainFormOrderItems.TabIndex = 15;
             this.lstMainFormOrderItems.Visible = false;
             // 
-            // pnlAlcohol
+            // lblReceipt
             // 
-            this.pnlAlcohol.Controls.Add(this.label26);
-            this.pnlAlcohol.Controls.Add(this.label25);
-            this.pnlAlcohol.Controls.Add(this.label3);
-            this.pnlAlcohol.Controls.Add(this.nudWhiteQuant);
-            this.pnlAlcohol.Controls.Add(this.nudRedQuant);
-            this.pnlAlcohol.Controls.Add(this.chkWhite);
-            this.pnlAlcohol.Controls.Add(this.chkRed);
-            this.pnlAlcohol.Controls.Add(this.label4);
-            this.pnlAlcohol.Location = new System.Drawing.Point(11, 249);
-            this.pnlAlcohol.Name = "pnlAlcohol";
-            this.pnlAlcohol.Size = new System.Drawing.Size(234, 119);
-            this.pnlAlcohol.TabIndex = 30;
-            this.pnlAlcohol.Visible = false;
+            this.lblReceipt.AutoSize = true;
+            this.lblReceipt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblReceipt.Location = new System.Drawing.Point(444, 44);
+            this.lblReceipt.Name = "lblReceipt";
+            this.lblReceipt.Size = new System.Drawing.Size(2, 19);
+            this.lblReceipt.TabIndex = 16;
             // 
-            // label25
+            // btnClose
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(59, 49);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(44, 17);
-            this.label25.TabIndex = 30;
-            this.label25.Text = "$7.99";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(62, 95);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(44, 17);
-            this.label26.TabIndex = 31;
-            this.label26.Text = "$7.99";
+            this.btnClose.Location = new System.Drawing.Point(544, 96);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(61, 23);
+            this.btnClose.TabIndex = 17;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1276, 698);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.lblReceipt);
             this.Controls.Add(this.lstMainFormOrderItems);
             this.Controls.Add(this.btnSearchOrder);
             this.Controls.Add(this.lblOrderNum);
@@ -1197,12 +1222,12 @@
             this.gbxSalad.PerformLayout();
             this.gbxDrinks.ResumeLayout(false);
             this.gbxDrinks.PerformLayout();
+            this.pnlAlcohol.ResumeLayout(false);
+            this.pnlAlcohol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudWhiteQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).EndInit();
-            this.pnlAlcohol.ResumeLayout(false);
-            this.pnlAlcohol.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1303,6 +1328,8 @@
         private System.Windows.Forms.Panel pnlAlcohol;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblReceipt;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

@@ -8,7 +8,7 @@ namespace Andrew_Stephen_Final_Project
 {
     class Order
     {
-        private const int _STARTING_ORDER = 1000;
+        //private const int _STARTING_ORDER = 1000;
         private const int _MAX_ORDER = 50;
         private int _orderNumber;
         private Food[] _foodArray;
@@ -16,8 +16,8 @@ namespace Andrew_Stephen_Final_Project
 
         public Order()
         {
-            _orderNumber = _STARTING_ORDER + frmMain.countOrderNum;
-            frmMain.countOrderNum++;
+            _orderNumber = 0;
+           // frmMain.countOrderNum++;
             _foodArray = new Food[_MAX_ORDER];
         }
 

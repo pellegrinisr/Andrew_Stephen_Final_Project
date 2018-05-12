@@ -54,6 +54,8 @@ namespace Andrew_Stephen_Final_Project
             InitializeComponent();
         }
 
+        //event handler
+        //form main load event
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblTimer.Text = DateTime.Now.ToString();
@@ -61,9 +63,12 @@ namespace Andrew_Stephen_Final_Project
             
         }
 
+        //event handler for checkout button
+        //opens frmConfirmation
         private void btnPay_Click(object sender, EventArgs e)
         {
-           
+            if (!(lstMainFormOrderItems.Items.Count == 0))
+                confrimForm.ShowDialog();
         }
 
         //event handler for Spaghetti check box
@@ -91,10 +96,10 @@ namespace Andrew_Stephen_Final_Project
         //show/hide the lasagna quantity text box
         private void chkLasagna_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkLinguini.Checked == true)
+            if (chkLasagna.Checked == true)
                 cbxLasagnaQuant.Visible = true;
             else
-                cbxLasagnaQuant.Visible = true;
+                cbxLasagnaQuant.Visible = false;
         }
 
         //event handler for ravioli check box
@@ -307,8 +312,14 @@ namespace Andrew_Stephen_Final_Project
         //add items and their respective prices to the list box
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < newOrder.FoodArray.Length; i++)
+            {
+                newOrder.FoodArray[i] = null;
+            }
+
             int countArrayIndex = 0;
-            newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
+
+            //newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
 
             lstMainFormOrderItems.Items.Clear();
            
@@ -542,9 +553,16 @@ namespace Andrew_Stephen_Final_Project
             }
             
             //show the frmConfirmation object with the filled in list box
-            confrimForm.Show();
+            //confrimForm.Show();
             for (int i = 0; i < countArrayIndex; i++)
                 lstMainFormOrderItems.Items.Add(newOrder.FoodArray[i].ToString());
+            //If an item isn't selected
+            if (lstMainFormOrderItems.Items.Count == 0)
+                MessageBox.Show("You must select at least one item to continue.");
+            else
+                btnPay.Visible = true;
+
+
 
         }
 
@@ -553,36 +571,35 @@ namespace Andrew_Stephen_Final_Project
         //will make the rest of the controls on the form visible
         private void btnNewOrder_Click_1(object sender, EventArgs e)
         {
-                if (txtName.Text == "")
-                    MessageBox.Show("Please enter your name.");
-                else
-                {
-                    gbxEntree.Visible = true;
-                    gbxSalad.Visible = true;
-                    gbxDrinks.Visible = true;
-                    btnBuildOrder.Visible = true;
-                    btnPay.Visible = true;
-                    btnReset.Visible = true;
-                    lstMainFormOrderItems.Visible = true;
-                    
-                    //countOrderNum++;
-                   
-                    
-                }
-         }
+            if (txtName.Text == "")
+                MessageBox.Show("Please enter your name.");
+            else
+            {
+                btnEditOrder.Visible = false;
+                gbxEntree.Visible = true;
+                gbxSalad.Visible = true;
+                gbxDrinks.Visible = true;
+                btnBuildOrder.Visible = true;
+                btnReset.Visible = true;
+                lstMainFormOrderItems.Visible = true;
+                newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
+
+                countOrderNum++;
+                lblReceipt.Text = newOrder.OrderNumber.ToString();
+
+
+            }
+        }
 
         //event handler for edit order button
         //will allow the user to edit a previously submitted order
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "")
-                MessageBox.Show("Please enter your name.");
-            else
-            {
+                btnNewOrder.Visible = false;
                 txtOrderNum.Visible = true;
                 lblOrderNum.Visible = true;
                 btnSearchOrder.Visible = true;
-            }
+                btnClose.Visible = true;
         }
 
         //event handler for search button
@@ -603,7 +620,7 @@ namespace Andrew_Stephen_Final_Project
                     
                     while (!infile.EndOfStream)
                     {
-                        lstMainFormOrderItems.Text = infile.ReadLine();
+                        lstMainFormOrderItems.Items.Add(infile.ReadLine());
                     }
                     lstMainFormOrderItems.Visible = true;
                 }
@@ -625,7 +642,89 @@ namespace Andrew_Stephen_Final_Project
                 pnlAlcohol.Visible = false;
         }
 
-        
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+        //clear the array
+            for (int i = 0; i < newOrder.FoodArray.Length; i++)
+            {
+                newOrder.FoodArray[i] = null;
+            }
+
+            //clear the list box
+            lstMainFormOrderItems.Items.Clear();
+            //hide the list box
+            lstMainFormOrderItems.Visible = false;
+
+            //entree section
+            chkSpaghetti.Checked = false;
+            chkLinguini.Checked = false;
+            chkLasagna.Checked = false;
+            chkRavioli.Checked = false;
+            chkPenne.Checked = false;
+            chkCarbonara.Checked = false;
+            chkPicatta.Checked = false;
+            chkMarsala.Checked = false;
+            chkCioppino.Checked = false;
+            chkPizza.Checked = false;
+            chkHouseSalad.Checked = false;
+            chkCaesar.Checked = false;
+            chkSpringGreens.Checked = false;
+            chkCaprese.Checked = false;
+            chkCoke.Checked = false;
+            chkSprite.Checked = false;
+            chkRed.Checked = false;
+            chkWhite.Checked = false;
+            cbxSpaghettiQuant.SelectedItem = null;
+            cbxLinguiniQuant.SelectedItem = null;
+            cbxLasagnaQuant.SelectedItem = null;
+            cbxRavioliQuant.SelectedItem = null;
+            cbxPenneQuant.SelectedItem = null;
+            cbxCarbonaraQuant.SelectedItem = null;
+            cbxPicattaQuant.SelectedItem = null;
+            cbxMarsalaQuant.SelectedItem = null;
+            cbxCioppinoQuant.SelectedItem = null;
+            cbxPizzaQuant.SelectedItem = null;
+            cbxHouseQuant.SelectedItem = null;
+            cbxCaesarQuant.SelectedItem = null;
+            cbxSpringQuant.SelectedItem = null;
+            cbxCapreseQuant.SelectedItem = null;
+            nudCokeQuant.Value = 1;
+            nudCokeQuant.Visible = false;
+            nudSpriteQuant.Value= 1;
+            nudSpriteQuant.Visible = false;
+            nudRedQuant.Value = 1;
+            nudRedQuant.Visible = false;
+            nudWhiteQuant.Value = 1;
+            nudWhiteQuant.Visible = false;
+            radNo.Checked = true;
+            gbxEntree.Visible = false;
+            gbxSalad.Visible = false;
+            gbxDrinks.Visible = false;
+            btnBuildOrder.Visible = false;
+            btnReset.Visible = false;
+            btnPay.Visible = false;
+            btnSearchOrder.Visible = false;
+            btnNewOrder.Visible = true;
+            btnEditOrder.Visible = true;
+            lblReceipt.Text = "";
+            lblOrderNum.Visible = false;
+            txtOrderNum.Text = "";
+            txtOrderNum.Visible = false;
+            txtName.Text = "";
+            countOrderNum--;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            btnNewOrder.Visible = true;
+            lstMainFormOrderItems.Visible = false;
+            lstMainFormOrderItems.Items.Clear();
+            btnSearchOrder.Visible = false;
+            btnClose.Visible = false;
+            txtOrderNum.Text = "";
+            txtOrderNum.Visible = false;
+            lblOrderNum.Visible = false;
+        }
     }
 }
 
