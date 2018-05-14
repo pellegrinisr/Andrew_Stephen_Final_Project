@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Andrew_Stephen_Final_Project
 {
-    class Order
+    public class Order
     {
         //private const int _STARTING_ORDER = 1000;
         private const int _MAX_ORDER = 50;

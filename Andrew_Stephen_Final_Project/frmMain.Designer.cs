@@ -109,6 +109,7 @@
             this.lstMainFormOrderItems = new System.Windows.Forms.ListBox();
             this.lblReceipt = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label27 = new System.Windows.Forms.Label();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
@@ -777,6 +778,7 @@
             // 
             // gbxDrinks
             // 
+            this.gbxDrinks.Controls.Add(this.label27);
             this.gbxDrinks.Controls.Add(this.pnlAlcohol);
             this.gbxDrinks.Controls.Add(this.radNo);
             this.gbxDrinks.Controls.Add(this.radYes);
@@ -791,7 +793,7 @@
             this.gbxDrinks.Controls.Add(this.label2);
             this.gbxDrinks.Location = new System.Drawing.Point(624, 314);
             this.gbxDrinks.Name = "gbxDrinks";
-            this.gbxDrinks.Size = new System.Drawing.Size(302, 372);
+            this.gbxDrinks.Size = new System.Drawing.Size(302, 380);
             this.gbxDrinks.TabIndex = 2;
             this.gbxDrinks.TabStop = false;
             this.gbxDrinks.Text = "Drinks";
@@ -807,7 +809,7 @@
             this.pnlAlcohol.Controls.Add(this.chkWhite);
             this.pnlAlcohol.Controls.Add(this.chkRed);
             this.pnlAlcohol.Controls.Add(this.label4);
-            this.pnlAlcohol.Location = new System.Drawing.Point(11, 249);
+            this.pnlAlcohol.Location = new System.Drawing.Point(11, 250);
             this.pnlAlcohol.Name = "pnlAlcohol";
             this.pnlAlcohol.Size = new System.Drawing.Size(234, 119);
             this.pnlAlcohol.TabIndex = 30;
@@ -944,7 +946,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(12, 192);
+            this.label24.Location = new System.Drawing.Point(12, 194);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(117, 17);
             this.label24.TabIndex = 22;
@@ -1191,6 +1193,15 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 177);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 17);
+            this.label27.TabIndex = 31;
+            this.label27.Text = "Alcohol";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1330,6 +1341,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label lblReceipt;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label27;
     }
 }
 

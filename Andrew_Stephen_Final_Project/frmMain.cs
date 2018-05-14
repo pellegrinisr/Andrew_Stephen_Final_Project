@@ -20,8 +20,8 @@ namespace Andrew_Stephen_Final_Project
        // private StreamWriter outfile;
         //private int orderNum = STARTING_ORDER;
 
-        private Order newOrder = new Order();
-
+        public Order newOrder = new Order();
+        double subtotal = 0;
 
         //global constants
         //Entree prices
@@ -68,7 +68,22 @@ namespace Andrew_Stephen_Final_Project
         private void btnPay_Click(object sender, EventArgs e)
         {
             if (!(lstMainFormOrderItems.Items.Count == 0))
+            {
+                foreach (string lineItem in lstMainFormOrderItems.Items)
+                {
+                    confrimForm.lstOrderInProgress.Items.Add(lineItem);
+                }
+                confrimForm.txtTip.Text = subtotal.ToString();
+               /* for (int i = 0; i < newOrder.FoodArray.Length; i++)
+                {
+                    subTotal += newOrder.FoodArray[i].Price * newOrder.FoodArray[i].Quantity;
+                }
+
+
+                confrimForm.lstOrderInProgress.Items.Add(subTotal);  */
                 confrimForm.ShowDialog();
+            }
+                    
         }
 
         //event handler for Spaghetti check box
@@ -313,6 +328,7 @@ namespace Andrew_Stephen_Final_Project
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
             bool isValid = true;
+            
 
             for (int i = 0; i < newOrder.FoodArray.Length; i++)
             {
@@ -336,8 +352,10 @@ namespace Andrew_Stephen_Final_Project
                     spaghetti.Quantity = int.Parse(cbxSpaghettiQuant.SelectedItem.ToString());
                     spaghetti.Price = SPAGHETTI;
 
+                    subtotal += SPAGHETTI * spaghetti.Quantity;
                     newOrder.FoodArray[countArrayIndex] = spaghetti;
                     countArrayIndex++;
+                    
                 }
                 
 
@@ -357,7 +375,7 @@ namespace Andrew_Stephen_Final_Project
                     linguini.Name = chkLinguini.Text;
                     linguini.Quantity = int.Parse(cbxLinguiniQuant.SelectedItem.ToString());
                     linguini.Price = LINGUINI;
-
+                    subtotal += LINGUINI * linguini.Quantity;
                     newOrder.FoodArray[countArrayIndex] = linguini;
                     countArrayIndex++;
                 }
@@ -376,7 +394,7 @@ namespace Andrew_Stephen_Final_Project
                     lasagna.Name = chkLasagna.Text;
                     lasagna.Quantity = int.Parse(cbxLasagnaQuant.SelectedItem.ToString());
                     lasagna.Price = LASAGNA;
-
+                    subtotal += LASAGNA * lasagna.Quantity;
                     newOrder.FoodArray[countArrayIndex] = lasagna;
                     countArrayIndex++;
                 }
@@ -395,6 +413,7 @@ namespace Andrew_Stephen_Final_Project
                     ravioli.Name = chkRavioli.Text;
                     ravioli.Quantity = int.Parse(cbxRavioliQuant.SelectedItem.ToString());
                     ravioli.Price = RAVIOLI;
+                    subtotal += RAVIOLI * ravioli.Quantity;
                     newOrder.FoodArray[countArrayIndex] = ravioli;
                     countArrayIndex++;
                 }
@@ -412,7 +431,7 @@ namespace Andrew_Stephen_Final_Project
                     penne.Name = chkPenne.Text;
                     penne.Price = PENNE;
                     penne.Quantity = int.Parse(cbxPenneQuant.SelectedItem.ToString());
-
+                    subtotal += PENNE * penne.Quantity;
                     newOrder.FoodArray[countArrayIndex] = penne;
                     countArrayIndex++;
                 }
@@ -430,7 +449,7 @@ namespace Andrew_Stephen_Final_Project
                     carbonara.Name = chkCarbonara.Text;
                     carbonara.Price = CARBONARA;
                     carbonara.Quantity = int.Parse(cbxCarbonaraQuant.SelectedItem.ToString());
-
+                    subtotal += carbonara.Quantity * CARBONARA;
                     newOrder.FoodArray[countArrayIndex] = carbonara;
                     countArrayIndex++;
                 }
@@ -449,7 +468,7 @@ namespace Andrew_Stephen_Final_Project
                     picatta.Name = chkPicatta.Text;
                     picatta.Price = PICATTA;
                     picatta.Quantity = int.Parse(cbxPicattaQuant.SelectedItem.ToString());
-
+                    subtotal += picatta.Quantity * PICATTA;
                     newOrder.FoodArray[countArrayIndex] = picatta;
                     countArrayIndex++;
                 }
@@ -469,7 +488,7 @@ namespace Andrew_Stephen_Final_Project
                     marsala.Name = chkMarsala.Text;
                     marsala.Quantity = int.Parse(cbxMarsalaQuant.SelectedItem.ToString());
                     marsala.Price = MARSALA;
-
+                    subtotal += MARSALA * marsala.Quantity;
                     newOrder.FoodArray[countArrayIndex] = marsala;
                     countArrayIndex++;
                 }
@@ -488,7 +507,7 @@ namespace Andrew_Stephen_Final_Project
                     cioppino.Name = chkCioppino.Text;
                     cioppino.Quantity = int.Parse(cbxCioppinoQuant.SelectedItem.ToString());
                     cioppino.Price = CIOPPINO;
-
+                    subtotal += CIOPPINO * cioppino.Quantity;
                     newOrder.FoodArray[countArrayIndex] = cioppino;
                     countArrayIndex++;
                 }
@@ -508,7 +527,7 @@ namespace Andrew_Stephen_Final_Project
                     pizza.Price = PIZZA;
                     pizza.Quantity = int.Parse(cbxPizzaQuant.SelectedItem.ToString());
                     pizza.Name = chkPizza.Text;
-
+                    subtotal += PIZZA * pizza.Quantity;
                     newOrder.FoodArray[countArrayIndex] = pizza;
                     countArrayIndex++;
                 }
@@ -527,7 +546,7 @@ namespace Andrew_Stephen_Final_Project
                     houseSalad.Name = chkHouseSalad.Text;
                     houseSalad.Quantity = int.Parse(cbxHouseQuant.SelectedItem.ToString());
                     houseSalad.Price = HOUSE;
-
+                    subtotal += HOUSE * houseSalad.Quantity;
                     newOrder.FoodArray[countArrayIndex] = houseSalad;
                     countArrayIndex++;
                 }
@@ -546,7 +565,7 @@ namespace Andrew_Stephen_Final_Project
                     caesar.Name = chkCaesar.Text;
                     caesar.Quantity = int.Parse(cbxCaesarQuant.SelectedItem.ToString());
                     caesar.Price = CAESAR;
-
+                    subtotal += CAESAR * caesar.Quantity;
                     newOrder.FoodArray[countArrayIndex] = caesar;
                     countArrayIndex++;
                 }
@@ -565,7 +584,7 @@ namespace Andrew_Stephen_Final_Project
                     springGreens.Name = chkSpringGreens.Text;
                     springGreens.Quantity = int.Parse(cbxSpringQuant.SelectedItem.ToString());
                     springGreens.Price = SPRING;
-
+                    subtotal += SPRING * springGreens.Quantity;
                     newOrder.FoodArray[countArrayIndex] = springGreens;
                     countArrayIndex++;
                 }
@@ -584,7 +603,7 @@ namespace Andrew_Stephen_Final_Project
                     caprese.Name = chkCaprese.Text;
                     caprese.Quantity = int.Parse(cbxCapreseQuant.SelectedItem.ToString());
                     caprese.Price = CAPRESE;
-
+                    subtotal += CAPRESE * caprese.Quantity;
                     newOrder.FoodArray[countArrayIndex] = caprese;
                     countArrayIndex++;
                 }
@@ -600,7 +619,7 @@ namespace Andrew_Stephen_Final_Project
                 coke.Name = chkCoke.Text;
                 coke.Quantity = int.Parse(nudCokeQuant.Value.ToString());
                 coke.Price = COKE;
-
+                subtotal += COKE * coke.Quantity;
                 newOrder.FoodArray[countArrayIndex] = coke;
                 countArrayIndex++;
             }
@@ -610,7 +629,7 @@ namespace Andrew_Stephen_Final_Project
                 sprite.Name = chkSprite.Text;
                 sprite.Quantity = int.Parse(nudSpriteQuant.Value.ToString());
                 sprite.Price = SPRITE;
-
+                subtotal += sprite.Quantity * SPRITE;
                 newOrder.FoodArray[countArrayIndex] = sprite;
                 countArrayIndex++;
             }
@@ -620,7 +639,7 @@ namespace Andrew_Stephen_Final_Project
                 redWine.Name = chkRed.Text;
                 redWine.Quantity = int.Parse(nudRedQuant.Value.ToString());
                 redWine.Price = RED;
-
+                subtotal += redWine.Quantity * RED;
                 newOrder.FoodArray[countArrayIndex] = redWine;
                 countArrayIndex++;
             }
@@ -630,7 +649,7 @@ namespace Andrew_Stephen_Final_Project
                 whiteWine.Price = WHITE;
                 whiteWine.Quantity = int.Parse(nudWhiteQuant.Value.ToString());
                 whiteWine.Name = chkWhite.Text;
-
+                subtotal += WHITE * whiteWine.Quantity;
                 newOrder.FoodArray[countArrayIndex] = whiteWine;
                 countArrayIndex++;
             }
@@ -639,8 +658,7 @@ namespace Andrew_Stephen_Final_Project
                 MessageBox.Show("Please select a quantity for each item.");
             else
             {
-                //show the frmConfirmation object with the filled in list box
-                //confrimForm.Show();
+                //show the frmConfirmation object with the filled in list box             
                 for (int i = 0; i < countArrayIndex; i++)
                     lstMainFormOrderItems.Items.Add(newOrder.FoodArray[i].ToString());
                 //If an item isn't selected
@@ -731,9 +749,14 @@ namespace Andrew_Stephen_Final_Project
                 pnlAlcohol.Visible = false;
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        public void btnReset_Click(object sender, EventArgs e)
         {
-        //clear the array
+            reset();
+        }
+
+        public void reset()
+        {
+            //clear the array
             for (int i = 0; i < newOrder.FoodArray.Length; i++)
             {
                 newOrder.FoodArray[i] = null;
@@ -779,7 +802,7 @@ namespace Andrew_Stephen_Final_Project
             cbxCapreseQuant.SelectedItem = null;
             nudCokeQuant.Value = 1;
             nudCokeQuant.Visible = false;
-            nudSpriteQuant.Value= 1;
+            nudSpriteQuant.Value = 1;
             nudSpriteQuant.Visible = false;
             nudRedQuant.Value = 1;
             nudRedQuant.Visible = false;
@@ -802,6 +825,7 @@ namespace Andrew_Stephen_Final_Project
             txtName.Text = "";
             countOrderNum--;
         }
+    
 
         private void btnClose_Click(object sender, EventArgs e)
         {

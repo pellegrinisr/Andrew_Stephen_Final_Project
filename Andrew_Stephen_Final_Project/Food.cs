@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Andrew_Stephen_Final_Project
 {
-    class Food
+    public class Food
     {
         private int _quantity;
         private double _price;
