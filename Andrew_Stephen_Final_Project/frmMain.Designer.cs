@@ -1195,6 +1195,7 @@
             this.lblReceipt.Name = "lblReceipt";
             this.lblReceipt.Size = new System.Drawing.Size(2, 19);
             this.lblReceipt.TabIndex = 16;
+            this.lblReceipt.Visible = false;
             // 
             // btnClose
             // 

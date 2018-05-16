@@ -332,7 +332,7 @@ namespace Andrew_Stephen_Final_Project
         //add items and their respective prices to the list box
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
-
+            
 
             bool isValid = true;
             subtotal = 0.0;
@@ -669,7 +669,12 @@ namespace Andrew_Stephen_Final_Project
                 if (lstMainFormOrderItems.Items.Count == 0)
                     MessageBox.Show("You must select at least one item to continue.");
                 else
+                {
                     btnPay.Visible = true;
+                    MessageBox.Show("Your order has been sent to the kitchen.");
+                    btnBuildOrder.Text = "Update Order";
+                }
+                    
             }
             
 
@@ -707,6 +712,7 @@ namespace Andrew_Stephen_Final_Project
                     initialOrderNum++;
                     newOrder.OrderNumber = initialOrderNum;
                     lblReceipt.Text = initialOrderNum.ToString();
+                    lblReceipt.Visible = true;
                 }
 
                 //newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
@@ -756,7 +762,7 @@ namespace Andrew_Stephen_Final_Project
                 catch
                 {
                     MessageBox.Show("File does not exist.");
-                }g
+                }
             }
         }
 
@@ -914,6 +920,8 @@ namespace Andrew_Stephen_Final_Project
                 btnPay.Visible = false;
                 btnOk.Visible = false;
                 btnCancel.Visible = false;
+                lblReceipt.Visible = false;
+
                 reset();
                 confrimForm.ShowDialog();
             }
