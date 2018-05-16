@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.lstOrderInProgress = new System.Windows.Forms.ListBox();
-            this.btnEditOrder = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
             this.gbxPaymentInfo = new System.Windows.Forms.GroupBox();
+            this.btnAddTip = new System.Windows.Forms.Button();
             this.txtTip = new System.Windows.Forms.TextBox();
             this.lblTip = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@
             this.cbxMonth = new System.Windows.Forms.ComboBox();
             this.radCredit = new System.Windows.Forms.RadioButton();
             this.radCash = new System.Windows.Forms.RadioButton();
-            this.btnAddTip = new System.Windows.Forms.Button();
+            this.lblOrderNum = new System.Windows.Forms.Label();
             this.gbxPaymentInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,26 +54,6 @@
             this.lstOrderInProgress.Name = "lstOrderInProgress";
             this.lstOrderInProgress.Size = new System.Drawing.Size(417, 628);
             this.lstOrderInProgress.TabIndex = 0;
-            // 
-            // btnEditOrder
-            // 
-            this.btnEditOrder.Location = new System.Drawing.Point(534, 83);
-            this.btnEditOrder.Name = "btnEditOrder";
-            this.btnEditOrder.Size = new System.Drawing.Size(106, 54);
-            this.btnEditOrder.TabIndex = 1;
-            this.btnEditOrder.Text = "Edit Order";
-            this.btnEditOrder.UseVisualStyleBackColor = true;
-            this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.Location = new System.Drawing.Point(686, 82);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(106, 57);
-            this.btnCheckOut.TabIndex = 2;
-            this.btnCheckOut.Text = "Enter Payment";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
-            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // gbxPaymentInfo
             // 
@@ -90,13 +69,22 @@
             this.gbxPaymentInfo.Controls.Add(this.cbxMonth);
             this.gbxPaymentInfo.Controls.Add(this.radCredit);
             this.gbxPaymentInfo.Controls.Add(this.radCash);
-            this.gbxPaymentInfo.Location = new System.Drawing.Point(521, 241);
+            this.gbxPaymentInfo.Location = new System.Drawing.Point(507, 108);
             this.gbxPaymentInfo.Name = "gbxPaymentInfo";
             this.gbxPaymentInfo.Size = new System.Drawing.Size(400, 411);
             this.gbxPaymentInfo.TabIndex = 3;
             this.gbxPaymentInfo.TabStop = false;
             this.gbxPaymentInfo.Text = "Payment Info";
-            this.gbxPaymentInfo.Visible = false;
+            // 
+            // btnAddTip
+            // 
+            this.btnAddTip.Location = new System.Drawing.Point(113, 75);
+            this.btnAddTip.Name = "btnAddTip";
+            this.btnAddTip.Size = new System.Drawing.Size(90, 36);
+            this.btnAddTip.TabIndex = 10;
+            this.btnAddTip.Text = "Add Tip";
+            this.btnAddTip.UseVisualStyleBackColor = true;
+            this.btnAddTip.Click += new System.EventHandler(this.btnAddTip_Click);
             // 
             // txtTip
             // 
@@ -122,6 +110,7 @@
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtCardNum
             // 
@@ -226,38 +215,36 @@
             this.radCash.Text = "Cash";
             this.radCash.UseVisualStyleBackColor = true;
             // 
-            // btnAddTip
+            // lblOrderNum
             // 
-            this.btnAddTip.Location = new System.Drawing.Point(113, 75);
-            this.btnAddTip.Name = "btnAddTip";
-            this.btnAddTip.Size = new System.Drawing.Size(90, 36);
-            this.btnAddTip.TabIndex = 10;
-            this.btnAddTip.Text = "Add Tip";
-            this.btnAddTip.UseVisualStyleBackColor = true;
-            this.btnAddTip.Click += new System.EventHandler(this.btnAddTip_Click);
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOrderNum.Location = new System.Drawing.Point(703, 49);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(2, 19);
+            this.lblOrderNum.TabIndex = 4;
             // 
             // frmConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(972, 680);
+            this.ControlBox = false;
+            this.Controls.Add(this.lblOrderNum);
             this.Controls.Add(this.gbxPaymentInfo);
-            this.Controls.Add(this.btnCheckOut);
-            this.Controls.Add(this.btnEditOrder);
             this.Controls.Add(this.lstOrderInProgress);
             this.Name = "frmConfirmation";
             this.Text = "frmConfirmation";
             this.gbxPaymentInfo.ResumeLayout(false);
             this.gbxPaymentInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         public System.Windows.Forms.ListBox lstOrderInProgress;
-        private System.Windows.Forms.Button btnEditOrder;
-        private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.GroupBox gbxPaymentInfo;
         private System.Windows.Forms.TextBox txtCardNum;
         private System.Windows.Forms.Label lblCardNum;
@@ -271,5 +258,6 @@
         private System.Windows.Forms.Label lblTip;
         public System.Windows.Forms.TextBox txtTip;
         private System.Windows.Forms.Button btnAddTip;
+        public System.Windows.Forms.Label lblOrderNum;
     }
 }

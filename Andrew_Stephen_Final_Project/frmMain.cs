@@ -17,7 +17,6 @@ namespace Andrew_Stephen_Final_Project
         private frmConfirmation confrimForm = new frmConfirmation();
         private frmSplash splashWindow = new frmSplash();
         private StreamReader infile;
-        private StreamWriter outfile;
         //private int orderNum = STARTING_ORDER;
         public double subtotal;
         public double salestax;
@@ -51,6 +50,7 @@ namespace Andrew_Stephen_Final_Project
         //for the order #
         private const int STARTING_ORDER = 1000;
         public static int countOrderNum = 0;   // for the order number
+        private int initialOrderNum = 0;
         //sales tax rate
         private const double TAX_RATE = 0.095;
         public frmMain()
@@ -62,7 +62,19 @@ namespace Andrew_Stephen_Final_Project
         //form main load event
         private void frmMain_Load(object sender, EventArgs e)
         {
+            infile = File.OpenText("currentOrderNumber.txt");
             lblTimer.Text = DateTime.Now.ToString();
+            string line = infile.ReadLine();
+            int.TryParse(line, out int lineInt);
+            if (lineInt == 0)
+                lblReceipt.Text = STARTING_ORDER.ToString();
+            else
+            {
+                this.lblReceipt.Text = line;
+                initialOrderNum = int.Parse(lblReceipt.Text);
+            }
+            //close the file
+            infile.Close();
             splashWindow.ShowDialog();
             
         }
@@ -71,36 +83,11 @@ namespace Andrew_Stephen_Final_Project
         //opens frmConfirmation
         private void btnPay_Click(object sender, EventArgs e)
         {
-            if (!(lstMainFormOrderItems.Items.Count == 0))
-            {
-                salestax = 0;
-                total = 0;
+            btnOk.Visible = true;
+            btnCancel.Visible = true;
+            MessageBox.Show("Are you sure you want to pay your bill?\nClick Ok to Pay");
 
-                foreach (string lineItem in lstMainFormOrderItems.Items)
-                {
-                    confrimForm.lstOrderInProgress.Items.Add(lineItem);
-                }
-
-                //calculate the subtotal
-               
-              /*  int i = 0;
-                while (i < newOrder.FoodArray.Length && newOrder.FoodArray[i] != null)
-                {
-                    subtotal += newOrder.FoodArray[i].Price;
-                    i++;
-                }  */
-                //add the subtotal to the list box on frmConfirmation
-                confrimForm.lstOrderInProgress.Items.Add("Subtotal:\t\t\t" + subtotal.ToString("C"));
-                //calculate the sales tax
-                salestax = subtotal * TAX_RATE;
-                //add the sales tax to the list box on frmConfirmation
-                confrimForm.lstOrderInProgress.Items.Add("Tax:\t\t\t" + salestax.ToString("C"));
-                //calculate the total price
-                total = subtotal + salestax;
-                //add the total to the listbox on frmConfirmation
-                confrimForm.lstOrderInProgress.Items.Add("Total:\t\t\t" + total.ToString("C"));
-                confrimForm.ShowDialog();
-            }
+            
                     
         }
 
@@ -345,13 +332,12 @@ namespace Andrew_Stephen_Final_Project
         //add items and their respective prices to the list box
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
+
+
             bool isValid = true;
             subtotal = 0.0;
+            //reset the array
 
-            for (int i = 0; i < newOrder.FoodArray.Length; i++)
-            {
-                newOrder.FoodArray[i] = null;
-            }
 
             int countArrayIndex = 0;
 
@@ -707,10 +693,28 @@ namespace Andrew_Stephen_Final_Project
                 btnBuildOrder.Visible = true;
                 btnReset.Visible = true;
                 lstMainFormOrderItems.Visible = true;
-                newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
+                gbxPay.Visible = true;
+
+                //figure out the order number
+                if (initialOrderNum == 0)
+                {
+                    lblReceipt.Text = STARTING_ORDER.ToString();
+                    initialOrderNum = STARTING_ORDER;
+                    newOrder.OrderNumber = initialOrderNum;
+                }
+                else
+                {
+                    initialOrderNum++;
+                    newOrder.OrderNumber = initialOrderNum;
+                    lblReceipt.Text = initialOrderNum.ToString();
+                }
+
+                //newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
+
+
 
                 countOrderNum++;
-                lblReceipt.Text = newOrder.OrderNumber.ToString();
+              //  lblReceipt.Text = newOrder.OrderNumber.ToString();
 
 
             }
@@ -752,7 +756,7 @@ namespace Andrew_Stephen_Final_Project
                 catch
                 {
                     MessageBox.Show("File does not exist.");
-                }
+                }g
             }
         }
 
@@ -770,6 +774,7 @@ namespace Andrew_Stephen_Final_Project
         public void btnReset_Click(object sender, EventArgs e)
         {
             reset();
+            initialOrderNum--;
         }
 
         public void reset()
@@ -841,7 +846,9 @@ namespace Andrew_Stephen_Final_Project
             txtOrderNum.Text = "";
             txtOrderNum.Visible = false;
             txtName.Text = "";
-            countOrderNum--;
+            gbxPay.Visible = false;
+            btnPay.Visible = false;
+            
         }
     
 
@@ -856,6 +863,63 @@ namespace Andrew_Stephen_Final_Project
             txtOrderNum.Visible = false;
             lblOrderNum.Visible = false;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnCancel.Visible = false;
+            btnOk.Visible = false;
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            confrimForm.lblOrderNum.Text = newOrder.OrderNumber.ToString();
+
+            if (!(lstMainFormOrderItems.Items.Count == 0))
+            {
+                salestax = 0;
+                total = 0;
+
+                foreach (string lineItem in lstMainFormOrderItems.Items)
+                {
+                    confrimForm.lstOrderInProgress.Items.Add(lineItem);
+                }
+
+                //calculate the subtotal
+
+                /*  int i = 0;
+                  while (i < newOrder.FoodArray.Length && newOrder.FoodArray[i] != null)
+                  {
+                      subtotal += newOrder.FoodArray[i].Price;
+                      i++;
+                  }  */
+                //add the subtotal to the list box on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Subtotal:\t\t\t" + subtotal.ToString("C"));
+                //calculate the sales tax
+                salestax = subtotal * TAX_RATE;
+                //add the sales tax to the list box on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Tax:\t\t\t" + salestax.ToString("C"));
+                //calculate the total price
+                total = subtotal + salestax;
+                //add the total to the listbox on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Total:\t\t\t" + total.ToString("C"));
+                btnPay.Visible = false;
+                int i = 0;
+                while (i < newOrder.FoodArray.Length && newOrder.FoodArray[i] != null)
+                {
+                    newOrder.FoodArray[i] = null;
+                }
+                gbxEntree.Visible = false;
+                gbxSalad.Visible = false;
+                gbxDrinks.Visible = false;
+                btnPay.Visible = false;
+                btnOk.Visible = false;
+                btnCancel.Visible = false;
+                reset();
+                confrimForm.ShowDialog();
+            }
+        }
+
+
     }
 }
 

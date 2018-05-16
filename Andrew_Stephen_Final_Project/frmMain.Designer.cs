@@ -75,6 +75,7 @@
             this.chkCaesar = new System.Windows.Forms.CheckBox();
             this.chkHouseSalad = new System.Windows.Forms.CheckBox();
             this.gbxDrinks = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.pnlAlcohol = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -109,7 +110,9 @@
             this.lstMainFormOrderItems = new System.Windows.Forms.ListBox();
             this.lblReceipt = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.gbxPay = new System.Windows.Forms.GroupBox();
             this.gbxEntree.SuspendLayout();
             this.gbxSalad.SuspendLayout();
             this.gbxDrinks.SuspendLayout();
@@ -118,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).BeginInit();
+            this.gbxPay.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxEntree
@@ -799,6 +803,15 @@
             this.gbxDrinks.Text = "Drinks";
             this.gbxDrinks.Visible = false;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 177);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 17);
+            this.label27.TabIndex = 31;
+            this.label27.Text = "Alcohol";
+            // 
             // pnlAlcohol
             // 
             this.pnlAlcohol.Controls.Add(this.label26);
@@ -1078,7 +1091,7 @@
             this.btnBuildOrder.Name = "btnBuildOrder";
             this.btnBuildOrder.Size = new System.Drawing.Size(75, 47);
             this.btnBuildOrder.TabIndex = 5;
-            this.btnBuildOrder.Text = "Build Order";
+            this.btnBuildOrder.Text = "Place Order";
             this.btnBuildOrder.UseVisualStyleBackColor = true;
             this.btnBuildOrder.Visible = false;
             this.btnBuildOrder.Click += new System.EventHandler(this.btnBuildOrder_Click);
@@ -1106,11 +1119,11 @@
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(1130, 599);
+            this.btnPay.Location = new System.Drawing.Point(100, 20);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(93, 37);
             this.btnPay.TabIndex = 9;
-            this.btnPay.Text = "Checkout";
+            this.btnPay.Text = "Pay Bill";
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Visible = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -1132,6 +1145,7 @@
             this.btnEditOrder.TabIndex = 11;
             this.btnEditOrder.Text = "Edit Order";
             this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.btnEditOrder.Visible = false;
             this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
             // txtOrderNum
@@ -1193,20 +1207,47 @@
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // label27
+            // btnOk
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(8, 177);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 17);
-            this.label27.TabIndex = 31;
-            this.label27.Text = "Alcohol";
+            this.btnOk.Location = new System.Drawing.Point(52, 67);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 18;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(159, 67);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // gbxPay
+            // 
+            this.gbxPay.Controls.Add(this.btnCancel);
+            this.gbxPay.Controls.Add(this.btnOk);
+            this.gbxPay.Controls.Add(this.btnPay);
+            this.gbxPay.Location = new System.Drawing.Point(997, 593);
+            this.gbxPay.Name = "gbxPay";
+            this.gbxPay.Size = new System.Drawing.Size(255, 108);
+            this.gbxPay.TabIndex = 20;
+            this.gbxPay.TabStop = false;
+            this.gbxPay.Text = "Pay ";
+            this.gbxPay.Visible = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 698);
+            this.ClientSize = new System.Drawing.Size(1309, 728);
+            this.Controls.Add(this.gbxPay);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblReceipt);
             this.Controls.Add(this.lstMainFormOrderItems);
@@ -1215,7 +1256,6 @@
             this.Controls.Add(this.txtOrderNum);
             this.Controls.Add(this.btnEditOrder);
             this.Controls.Add(this.lblTimer);
-            this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnBuildOrder);
@@ -1239,6 +1279,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRedQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpriteQuant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCokeQuant)).EndInit();
+            this.gbxPay.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1342,6 +1383,9 @@
         private System.Windows.Forms.Label lblReceipt;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.GroupBox gbxPay;
     }
 }
 

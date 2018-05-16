@@ -1,4 +1,8 @@
-This
-is
-a
-test.
+Spaghetti     (4)      ($9.99)      $39.96
+Caprese     (2)      ($9.95)      $19.90
+Sprite     (4)      ($1.99)      $7.96
+Subtotal:			$67.82
+Tax:			$6.44
+Total:			$74.26
+Tip:			$8
+New Total:		$82.26

@@ -1,0 +1,7 @@
+Spaghetti     (1)      ($9.99)      $9.99
+Linguini     (1)      ($10.99)      $10.99
+Subtotal:			$20.98
+Tax:			$1.99
+Total:			$22.97
+Tip:			$3
+New Total:		$25.97

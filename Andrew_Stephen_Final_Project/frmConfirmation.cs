@@ -7,28 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Andrew_Stephen_Final_Project
 {
     public partial class frmConfirmation : Form
     {
-       
+        StreamWriter outfile;
 
         public frmConfirmation()
         {
             InitializeComponent();
-        }
-
-        private void btnEditOrder_Click(object sender, EventArgs e)
-        {
-            lstOrderInProgress.Items.Clear();
-            txtTip.Text = "";
-            this.Hide();
-        }
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
-        {
-            gbxPaymentInfo.Visible = true;  
         }
 
         private void radCredit_CheckedChanged(object sender, EventArgs e)
@@ -57,8 +46,52 @@ namespace Andrew_Stephen_Final_Project
         {
             double newtotal;
             lstOrderInProgress.Items.Add("Tip:\t\t\t$" + txtTip.Text);
-            newtotal = double.Parse(txtTip.Text) + frmMain.total;
+            double.TryParse(txtTip.Text, out double doubleValue);
+            if (doubleValue == 0)
+                newtotal = frmMain.total;
+            else
+                newtotal = double.Parse(txtTip.Text) + frmMain.total;
             lstOrderInProgress.Items.Add("New Total:\t\t" + newtotal.ToString("C"));
         }
-    }
-}
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            bool isValid = true;
+            string filepath = lblOrderNum.Text + ".txt";
+            if (radCredit.Checked == true)
+            {
+                if (txtCardNum.Text == "")
+                    isValid = false;
+                if (cbxMonth.SelectedIndex == -1)
+                    isValid = false;
+                if (cbxYear.SelectedIndex == -1)
+                    isValid = false;
+            }
+            if (!isValid)
+                MessageBox.Show("Please correct errors in payment info.");
+            else
+            {
+                //write to file
+                //hide the confirmation form
+                
+                outfile = File.CreateText(filepath);
+
+                foreach (string s in lstOrderInProgress.Items)
+                {
+                    outfile.WriteLine(s);
+                }
+
+                outfile.Close();
+                filepath = "currentOrderNumber.txt";
+                outfile = File.CreateText(filepath);
+                outfile.Write(lblOrderNum.Text);
+                outfile.Close();
+                lstOrderInProgress.Items.Clear();
+                this.Hide();
+            }
+
+            
+        }
+     }
+ }
+

@@ -1,0 +1,7 @@
+Spaghetti     (1)      ($9.99)      $9.99
+Caesar     (1)      ($7.95)      $7.95
+Subtotal:			$17.94
+Tax:			$1.70
+Total:			$19.64
+Tip:			$2
+New Total:		$21.64

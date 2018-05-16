@@ -1,0 +1,9 @@
+Spring Greens     (1)      ($8.45)      $8.45
+Caprese     (1)      ($9.95)      $9.95
+Coke     (1)      ($1.99)      $1.99
+Sprite     (1)      ($1.99)      $1.99
+Subtotal:			$22.38
+Tax:			$2.13
+Total:			$24.51
+Tip:			$3
+New Total:		$27.51

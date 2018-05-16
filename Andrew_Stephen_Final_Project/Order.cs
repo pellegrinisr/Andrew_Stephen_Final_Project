@@ -17,7 +17,7 @@ namespace Andrew_Stephen_Final_Project
         public Order()
         {
             _orderNumber = 0;
-           // frmMain.countOrderNum++;
+
             _foodArray = new Food[_MAX_ORDER];
         }
 
