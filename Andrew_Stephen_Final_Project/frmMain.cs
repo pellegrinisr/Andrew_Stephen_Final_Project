@@ -17,11 +17,14 @@ namespace Andrew_Stephen_Final_Project
         private frmConfirmation confrimForm = new frmConfirmation();
         private frmSplash splashWindow = new frmSplash();
         private StreamReader infile;
-       // private StreamWriter outfile;
+        private StreamWriter outfile;
         //private int orderNum = STARTING_ORDER;
+        public double subtotal;
+        public double salestax;
+        public static double total;
 
         public Order newOrder = new Order();
-        double subtotal = 0;
+        
 
         //global constants
         //Entree prices
@@ -48,7 +51,8 @@ namespace Andrew_Stephen_Final_Project
         //for the order #
         private const int STARTING_ORDER = 1000;
         public static int countOrderNum = 0;   // for the order number
-
+        //sales tax rate
+        private const double TAX_RATE = 0.095;
         public frmMain()
         {
             InitializeComponent();
@@ -69,18 +73,32 @@ namespace Andrew_Stephen_Final_Project
         {
             if (!(lstMainFormOrderItems.Items.Count == 0))
             {
+                salestax = 0;
+                total = 0;
+
                 foreach (string lineItem in lstMainFormOrderItems.Items)
                 {
                     confrimForm.lstOrderInProgress.Items.Add(lineItem);
                 }
-                confrimForm.txtTip.Text = subtotal.ToString();
-               /* for (int i = 0; i < newOrder.FoodArray.Length; i++)
+
+                //calculate the subtotal
+               
+              /*  int i = 0;
+                while (i < newOrder.FoodArray.Length && newOrder.FoodArray[i] != null)
                 {
-                    subTotal += newOrder.FoodArray[i].Price * newOrder.FoodArray[i].Quantity;
-                }
-
-
-                confrimForm.lstOrderInProgress.Items.Add(subTotal);  */
+                    subtotal += newOrder.FoodArray[i].Price;
+                    i++;
+                }  */
+                //add the subtotal to the list box on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Subtotal:\t\t\t" + subtotal.ToString("C"));
+                //calculate the sales tax
+                salestax = subtotal * TAX_RATE;
+                //add the sales tax to the list box on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Tax:\t\t\t" + salestax.ToString("C"));
+                //calculate the total price
+                total = subtotal + salestax;
+                //add the total to the listbox on frmConfirmation
+                confrimForm.lstOrderInProgress.Items.Add("Total:\t\t\t" + total.ToString("C"));
                 confrimForm.ShowDialog();
             }
                     
@@ -328,7 +346,7 @@ namespace Andrew_Stephen_Final_Project
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
             bool isValid = true;
-            
+            subtotal = 0.0;
 
             for (int i = 0; i < newOrder.FoodArray.Length; i++)
             {

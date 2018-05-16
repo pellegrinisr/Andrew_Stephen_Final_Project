@@ -45,7 +45,8 @@ namespace Andrew_Stephen_Final_Project
 
         public override string ToString()
         {
-            return _name + "     (" + _quantity + ")      " + "(" + _price + ")      " + _quantity * _price; 
+            double totalPrice = _price * _quantity;
+            return _name + "     (" + _quantity + ")      " + "(" + _price.ToString("C") + ")      " + totalPrice.ToString("C"); 
         }
     }
 }

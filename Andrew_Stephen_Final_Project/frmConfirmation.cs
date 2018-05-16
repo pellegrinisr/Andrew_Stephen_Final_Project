@@ -22,6 +22,7 @@ namespace Andrew_Stephen_Final_Project
         private void btnEditOrder_Click(object sender, EventArgs e)
         {
             lstOrderInProgress.Items.Clear();
+            txtTip.Text = "";
             this.Hide();
         }
 
@@ -52,5 +53,12 @@ namespace Andrew_Stephen_Final_Project
             }
         }
 
+        private void btnAddTip_Click(object sender, EventArgs e)
+        {
+            double newtotal;
+            lstOrderInProgress.Items.Add("Tip:\t\t\t$" + txtTip.Text);
+            newtotal = double.Parse(txtTip.Text) + frmMain.total;
+            lstOrderInProgress.Items.Add("New Total:\t\t" + newtotal.ToString("C"));
+        }
     }
 }

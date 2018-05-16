@@ -32,6 +32,8 @@
             this.btnEditOrder = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.gbxPaymentInfo = new System.Windows.Forms.GroupBox();
+            this.txtTip = new System.Windows.Forms.TextBox();
+            this.lblTip = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.txtCardNum = new System.Windows.Forms.TextBox();
             this.lblCardNum = new System.Windows.Forms.Label();
@@ -41,8 +43,7 @@
             this.cbxMonth = new System.Windows.Forms.ComboBox();
             this.radCredit = new System.Windows.Forms.RadioButton();
             this.radCash = new System.Windows.Forms.RadioButton();
-            this.lblTip = new System.Windows.Forms.Label();
-            this.txtTip = new System.Windows.Forms.TextBox();
+            this.btnAddTip = new System.Windows.Forms.Button();
             this.gbxPaymentInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +78,7 @@
             // 
             // gbxPaymentInfo
             // 
+            this.gbxPaymentInfo.Controls.Add(this.btnAddTip);
             this.gbxPaymentInfo.Controls.Add(this.txtTip);
             this.gbxPaymentInfo.Controls.Add(this.lblTip);
             this.gbxPaymentInfo.Controls.Add(this.btnConfirm);
@@ -95,6 +97,22 @@
             this.gbxPaymentInfo.TabStop = false;
             this.gbxPaymentInfo.Text = "Payment Info";
             this.gbxPaymentInfo.Visible = false;
+            // 
+            // txtTip
+            // 
+            this.txtTip.Location = new System.Drawing.Point(103, 47);
+            this.txtTip.Name = "txtTip";
+            this.txtTip.Size = new System.Drawing.Size(100, 22);
+            this.txtTip.TabIndex = 5;
+            // 
+            // lblTip
+            // 
+            this.lblTip.AutoSize = true;
+            this.lblTip.Location = new System.Drawing.Point(56, 50);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(32, 17);
+            this.lblTip.TabIndex = 4;
+            this.lblTip.Text = "Tip:";
             // 
             // btnConfirm
             // 
@@ -188,7 +206,7 @@
             // radCredit
             // 
             this.radCredit.AutoSize = true;
-            this.radCredit.Location = new System.Drawing.Point(62, 141);
+            this.radCredit.Location = new System.Drawing.Point(62, 150);
             this.radCredit.Name = "radCredit";
             this.radCredit.Size = new System.Drawing.Size(103, 21);
             this.radCredit.TabIndex = 1;
@@ -200,7 +218,7 @@
             // radCash
             // 
             this.radCash.AutoSize = true;
-            this.radCash.Location = new System.Drawing.Point(62, 103);
+            this.radCash.Location = new System.Drawing.Point(62, 124);
             this.radCash.Name = "radCash";
             this.radCash.Size = new System.Drawing.Size(61, 21);
             this.radCash.TabIndex = 0;
@@ -208,21 +226,15 @@
             this.radCash.Text = "Cash";
             this.radCash.UseVisualStyleBackColor = true;
             // 
-            // lblTip
+            // btnAddTip
             // 
-            this.lblTip.AutoSize = true;
-            this.lblTip.Location = new System.Drawing.Point(56, 50);
-            this.lblTip.Name = "lblTip";
-            this.lblTip.Size = new System.Drawing.Size(32, 17);
-            this.lblTip.TabIndex = 4;
-            this.lblTip.Text = "Tip:";
-            // 
-            // txtTip
-            // 
-            this.txtTip.Location = new System.Drawing.Point(103, 47);
-            this.txtTip.Name = "txtTip";
-            this.txtTip.Size = new System.Drawing.Size(100, 22);
-            this.txtTip.TabIndex = 5;
+            this.btnAddTip.Location = new System.Drawing.Point(113, 75);
+            this.btnAddTip.Name = "btnAddTip";
+            this.btnAddTip.Size = new System.Drawing.Size(90, 36);
+            this.btnAddTip.TabIndex = 10;
+            this.btnAddTip.Text = "Add Tip";
+            this.btnAddTip.UseVisualStyleBackColor = true;
+            this.btnAddTip.Click += new System.EventHandler(this.btnAddTip_Click);
             // 
             // frmConfirmation
             // 
@@ -258,5 +270,6 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lblTip;
         public System.Windows.Forms.TextBox txtTip;
+        private System.Windows.Forms.Button btnAddTip;
     }
 }
