@@ -21,7 +21,7 @@ namespace Andrew_Stephen_Final_Project
         public double subtotal;
         public double salestax;
         public static double total;
-
+        //instance of the Order class
         public Order newOrder = new Order();
         
 
@@ -62,12 +62,21 @@ namespace Andrew_Stephen_Final_Project
         //form main load event
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //initialize infile object
+            //text file contains the last order number
             infile = File.OpenText("currentOrderNumber.txt");
+            //this displays the day/time
+            //probably not necessary
             lblTimer.Text = DateTime.Now.ToString();
+            //read the first line of the orderNumber file
             string line = infile.ReadLine();
+            //try to parse the first line to an integer
             int.TryParse(line, out int lineInt);
+            //if equals to 0
+            //the file is blank
             if (lineInt == 0)
                 lblReceipt.Text = STARTING_ORDER.ToString();
+            //there is an order number in the file
             else
             {
                 this.lblReceipt.Text = line;
@@ -75,6 +84,7 @@ namespace Andrew_Stephen_Final_Project
             }
             //close the file
             infile.Close();
+            //display the splash window
             splashWindow.ShowDialog();
             
         }
@@ -85,12 +95,15 @@ namespace Andrew_Stephen_Final_Project
         {
             btnOk.Visible = true;
             btnCancel.Visible = true;
-            MessageBox.Show("Are you sure you want to pay your bill?\nClick Ok to Pay");
-
-            
-                    
+            MessageBox.Show("Are you sure you want to pay your bill?\nClick Ok to Pay");            
         }
-
+        //
+        //
+        //
+        //Event handlers for all of the check boxes
+        //
+        //
+        //
         //event handler for Spaghetti check box
         //show/hide the spaghetti quantity text box
         private void chkSpaghetti_CheckedChanged(object sender, EventArgs e)
@@ -270,74 +283,13 @@ namespace Andrew_Stephen_Final_Project
         }
 
         //function
-        //make sure each selected check box has a quantity
-        //SO FAR ONLY WORKS FOR ENTREES AND SALADS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        /*
-        private bool validation()
-        {
-            bool isValid = true;
-            foreach (Control c in this.gbxEntree.Controls)
-            {
-                if (c is TextBox && c.Visible == true)
-                {
-                    //if (c.Name == "txtName");
-
-                     if (c.Text == "")
-                    {
-                        MessageBox.Show("Please enter quantity for each selected item.");
-                        isValid = false;
-                    }
-                    else if (!int.TryParse(c.Text, out int quantity))
-                    {
-                        MessageBox.Show("Quantity must be a valid integer.");
-                        isValid = false;
-                    }
-                    else if (quantity < 0)
-                    {
-                        MessageBox.Show("Quantity must be greater than 0.");
-                        isValid = false;
-                    }
-                }
-            }
-            foreach (Control c in this.gbxSalad.Controls)
-            {
-                if (c is TextBox && c.Visible == true)
-                {
-                    if ()
-                    {
-                        MessageBox.Show("Please enter quantity for each selected item.");
-                        isValid = false;
-                    }
-                    else if (!int.TryParse(c.Text, out int quantity))
-                    {
-                        MessageBox.Show("Quantity must be a valid integer.");
-                        isValid = false;
-                    }
-                    else if (quantity < 0)
-                    {
-                        MessageBox.Show("Quantity must be greater than 0.");
-                        isValid = false;
-                    }
-                }
-            }
-            
-            return isValid;
-        }
-
-    */
-
-        //function
         //calculate the total price of each food item (price x quantity)
-        // and store the value in an array
+        // and store the food items in the Order objec's array
         //add items and their respective prices to the list box
         private void btnBuildOrder_Click(object sender, EventArgs e)
         {
-            
-
             bool isValid = true;
             subtotal = 0.0;
-            //reset the array
-
 
             int countArrayIndex = 0;
 
@@ -362,12 +314,6 @@ namespace Andrew_Stephen_Final_Project
                     
                 }
                 
-
-                //confirmForm.lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.txtSpaghettiQuant.Text + ", Price=" + (int.Parse(this.txtSpaghettiQuant.Text) * this.SPAGHETTI));
-               // lstOrderInProgress.Items.Add("(" + cbxSpaghettiQuant.SelectedItem + ")  " + chkSpaghetti.Text + "   " + SPAGHETTI);
-                //lstOrderInProgress.Items.Add(int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI);
-                //confrimForm.lstOrderInProgress.Items.Add(spaghetti.Name.ToString() + " (" + spaghetti.Quantity + ") " + (spaghetti.Price * spaghetti.Quantity));
-                //lstOrderInProgress.Items.Add("Spaghetti, Quantity=" + this.cbxSpaghettiQuant.SelectedItem + ", Price=" + (int.Parse(cbxSpaghettiQuant.SelectedItem.ToString()) * SPAGHETTI));
             }
             if (chkLinguini.Checked == true)
             {
@@ -384,9 +330,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                //lstOrderInProgress.Items.Add("Linguini, Quantity=" + txtLinguiniQuant.Text + ", Price=" + (int.Parse(txtLinguiniQuant.Text) * LINGUINI));
-                // confrimForm.lstOrderInProgress.Items.Add("Linguini, Quantity=" + cbxLinguiniQuant.SelectedItem + ", Price=" + (int.Parse(cbxLinguiniQuant.SelectedItem.ToString()) * LINGUINI));
             }
             if (chkLasagna.Checked == true)
             {
@@ -403,9 +346,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                
-                //confrimForm.lstOrderInProgress.Items.Add("Lasagna, Quantithy=" + cbxLasagnaQuant.SelectedItem + ", Price=" + (int.Parse(cbxLasagnaQuant.SelectedItem.ToString()) * LASAGNA));
-
-                //lstOrderInProgress.Items.Add("Lasagna, Quantity=" + txtLasagnaQuant.Text + ", Price=" + (int.Parse(txtLasagnaQuant.Text) * LASAGNA));
             }
             if (chkRavioli.Checked == true)
             {
@@ -421,9 +361,6 @@ namespace Andrew_Stephen_Final_Project
                     newOrder.FoodArray[countArrayIndex] = ravioli;
                     countArrayIndex++;
                 }
-
-
-               // confrimForm.lstOrderInProgress.Items.Add("Ravioli, Quantity=" + cbxRavioliQuant.SelectedItem + ", Price=" + (int.Parse(cbxRavioliQuant.SelectedItem.ToString()) * RAVIOLI));
             }
             if (chkPenne.Checked == true)
             {
@@ -439,8 +376,6 @@ namespace Andrew_Stephen_Final_Project
                     newOrder.FoodArray[countArrayIndex] = penne;
                     countArrayIndex++;
                 }
-
-                //  confrimForm.lstOrderInProgress.Items.Add("Penne, Quantity=" + cbxPenneQuant.SelectedItem + ", Price=" + (int.Parse(cbxPenneQuant.SelectedItem.ToString()) * PENNE));
 
             }
             if (chkCarbonara.Checked == true)
@@ -458,8 +393,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                //   confrimForm.lstOrderInProgress.Items.Add("Carbonara, Quantity=" + cbxCarbonaraQuant.SelectedItem + ", Price=" + (int.Parse(cbxCarbonaraQuant.SelectedItem.ToString()) * CARBONARA));
             }
             
             if (chkPicatta.Checked == true)
@@ -477,10 +410,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                // confrimForm.lstOrderInProgress.Items.Add("Picatta, Quantity=" + cbxPicattaQuant.Text + ", Price=" + (int.Parse(cbxPicattaQuant.SelectedItem.ToString()) * PICATTA));
-
-                //lstOrderInProgress.Items.Add("Picatta, Quantity=" + txtPicattaQuant.Text + ", Price=" + (int.Parse(txtPicattaQuant.Text) * PICATTA));
             }
             if (chkMarsala.Checked == true)
             {
@@ -497,9 +426,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                // confrimForm.lstOrderInProgress.Items.Add("Marsala, Quantity=" + cbxMarsalaQuant.Text + ", Price=" + (int.Parse(cbxMarsalaQuant.SelectedItem.ToString()) * MARSALA));
-                //lstOrderInProgress.Items.Add("Marsala, Quantity=" + txtMarsalaQuant.Text + ", Price=" + (int.Parse(txtMarsalaQuant.Text)* MARSALA));
             }
             if (chkCioppino.Checked == true)
             {
@@ -516,10 +442,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-
-                // confrimForm.lstOrderInProgress.Items.Add("Cioppino, Quantity=" + cbxCioppinoQuant.SelectedItem + ", Price=" + (int.Parse(cbxCioppinoQuant.SelectedItem.ToString()) * CIOPPINO));
-                // lstOrderInProgress.Items.Add("Cioppino, Quantity=" + txtCioppinoQuant.Text + ", Price=" + (int.Parse(txtCarbonaraQuant.Text) * CIOPPINO));
             }
             if (chkPizza.Checked == true)
             {
@@ -536,9 +458,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                //confrimForm.lstOrderInProgress.Items.Add("Pizza, Quantity=" + cbxPizzaQuant.SelectedItem + ", Price=" + (int.Parse(cbxPizzaQuant.SelectedItem.ToString()) * PIZZA));
-                // lstOrderInProgress.Items.Add("Pizza, Quantity=" + txtPizzaQuant.Text + ", Price=" + (int.Parse(txtPizzaQuant.Text) * PIZZA));
             }
             if (chkHouseSalad.Checked == true)
             {
@@ -555,9 +474,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                
-
-                // confrimForm.lstOrderInProgress.Items.Add("House Salad, Quantity=" + cbxHouseQuant.SelectedItem + ", Price=" + (int.Parse(cbxHouseQuant.SelectedItem.ToString()) * HOUSE));
-                //lstOrderInProgress.Items.Add("House Salad, Quantity=" + txtHouseQuant.Text + ", Price=" + (int.Parse(txtHouseQuant.Text) * HOUSE));
             }
             if (chkCaesar.Checked == true)
             {
@@ -574,9 +490,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                //  confrimForm.lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + cbxCaesarQuant.SelectedItem + ", Price= " + (int.Parse(cbxCaesarQuant.SelectedItem.ToString()) * CAESAR));
-                // lstOrderInProgress.Items.Add("Caesar Salad, Quantity=" + txtCaesarQuant.Text + ", Price= " + (int.Parse(txtCaesarQuant.Text) * CAESAR));
             }
             if (chkSpringGreens.Checked == true)
             {
@@ -593,9 +506,6 @@ namespace Andrew_Stephen_Final_Project
                     countArrayIndex++;
                 }
                 
-
-                //confrimForm.lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + cbxSpringQuant.SelectedItem + ", Price=" + (int.Parse(cbxSpringQuant.SelectedItem.ToString()) * SPRING));
-                // lstOrderInProgress.Items.Add("Spring Greens, Quantity=" + txtSpringQuant.Text + ", Price=" + (int.Parse(txtSpringQuant.Text) * SPRING));
             }
             if (chkCaprese.Checked == true)
             {
@@ -611,10 +521,7 @@ namespace Andrew_Stephen_Final_Project
                     newOrder.FoodArray[countArrayIndex] = caprese;
                     countArrayIndex++;
                 }
-               
-
-                //confrimForm.lstOrderInProgress.Items.Add("Caprese, Quantity=" + cbxCapreseQuant.SelectedItem + ", Price=" + (int.Parse(cbxCapreseQuant.SelectedItem.ToString()) * CAPRESE));
-                //lstOrderInProgress.Items.Add("Caprese, Quantity=" + txtCapreseQuant.Text + ", Price=" + (int.Parse(txtCapreseQuant.Text) * CAPRESE));
+              
             }
             if (chkCoke.Checked == true)
             {
@@ -657,9 +564,12 @@ namespace Andrew_Stephen_Final_Project
                 newOrder.FoodArray[countArrayIndex] = whiteWine;
                 countArrayIndex++;
             }
-
+            //validate user input
+            //isValid will be false if any checked checkbox
+            //does not have a quanity
             if (isValid == false)
                 MessageBox.Show("Please select a quantity for each item.");
+            //input is valid
             else
             {
                 //show the frmConfirmation object with the filled in list box             
@@ -673,13 +583,8 @@ namespace Andrew_Stephen_Final_Project
                     btnPay.Visible = true;
                     MessageBox.Show("Your order has been sent to the kitchen.");
                     btnBuildOrder.Text = "Update Order";
-                }
-                    
+                }                   
             }
-            
-
-
-
         }
 
         //event handler
@@ -687,8 +592,10 @@ namespace Andrew_Stephen_Final_Project
         //will make the rest of the controls on the form visible
         private void btnNewOrder_Click_1(object sender, EventArgs e)
         {
+            //make sure name box is not blank
             if (txtName.Text == "")
                 MessageBox.Show("Please enter your name.");
+            //user has entered a name
             else
             {
                 btnEditOrder.Visible = false;
@@ -699,6 +606,7 @@ namespace Andrew_Stephen_Final_Project
                 btnReset.Visible = true;
                 lstMainFormOrderItems.Visible = true;
                 gbxPay.Visible = true;
+                btnBuildOrder.Text = "Place Order";
 
                 //figure out the order number
                 if (initialOrderNum == 0)
@@ -716,16 +624,17 @@ namespace Andrew_Stephen_Final_Project
                 }
 
                 //newOrder.OrderNumber = STARTING_ORDER + countOrderNum;
-
-
-
                 countOrderNum++;
               //  lblReceipt.Text = newOrder.OrderNumber.ToString();
-
-
             }
         }
-
+        //
+        //
+        //
+        //This is not necessary on the main form
+        //
+        //
+        //
         //event handler for edit order button
         //will allow the user to edit a previously submitted order
         private void btnEditOrder_Click(object sender, EventArgs e)
@@ -736,7 +645,13 @@ namespace Andrew_Stephen_Final_Project
                 btnSearchOrder.Visible = true;
                 btnClose.Visible = true;
         }
-
+        //
+        //
+        //
+        //Not necessary on main form
+        //
+        //
+        //
         //event handler for search button
         //will search for receipt of previous order
         private void btnSearchOrder_Click(object sender, EventArgs e)
@@ -765,7 +680,30 @@ namespace Andrew_Stephen_Final_Project
                 }
             }
         }
+        //
+        //
+        //
+        //not necessary for the main form 
+        //
+        //
+        //event handler for close button
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            btnNewOrder.Visible = true;
+            lstMainFormOrderItems.Visible = false;
+            lstMainFormOrderItems.Items.Clear();
+            btnSearchOrder.Visible = false;
+            btnClose.Visible = false;
+            txtOrderNum.Text = "";
+            txtOrderNum.Visible = false;
+            lblOrderNum.Visible = false;
+        }
+        //
+        //
+        //
+        //
 
+        //event handler for 21+ radio button
         private void radYes_CheckedChanged(object sender, EventArgs e)
         {
             if (radYes.Checked == true)
@@ -776,13 +714,16 @@ namespace Andrew_Stephen_Final_Project
             else
                 pnlAlcohol.Visible = false;
         }
-
+        //event handler for the reset button
+        //calls the reset method
+        //clears the main form back
         public void btnReset_Click(object sender, EventArgs e)
         {
             reset();
             initialOrderNum--;
         }
-
+        //reset method
+        //called by the reset event handler
         public void reset()
         {
             //clear the array
@@ -857,25 +798,18 @@ namespace Andrew_Stephen_Final_Project
             
         }
     
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            btnNewOrder.Visible = true;
-            lstMainFormOrderItems.Visible = false;
-            lstMainFormOrderItems.Items.Clear();
-            btnSearchOrder.Visible = false;
-            btnClose.Visible = false;
-            txtOrderNum.Text = "";
-            txtOrderNum.Visible = false;
-            lblOrderNum.Visible = false;
-        }
-
+        
+        //cancel button 
+        //found in payment info group box
         private void btnCancel_Click(object sender, EventArgs e)
         {
             btnCancel.Visible = false;
             btnOk.Visible = false;
         }
 
+        //ok button
+        //found in the payment info group box
+        //this will trigger the confirmation form
         private void btnOk_Click(object sender, EventArgs e)
         {
             confrimForm.lblOrderNum.Text = newOrder.OrderNumber.ToString();
@@ -926,8 +860,6 @@ namespace Andrew_Stephen_Final_Project
                 confrimForm.ShowDialog();
             }
         }
-
-
     }
 }
 

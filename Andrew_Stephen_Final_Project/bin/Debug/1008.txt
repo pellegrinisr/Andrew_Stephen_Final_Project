@@ -1,0 +1,6 @@
+Spaghetti     (1)      ($9.99)      $9.99
+Subtotal:			$9.99
+Tax:			$0.95
+Total:			$10.94
+Tip:			$s
+New Total:		$10.94

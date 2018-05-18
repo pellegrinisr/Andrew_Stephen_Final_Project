@@ -62,6 +62,7 @@ namespace Andrew_Stephen_Final_Project
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            
             bool isValid = true;
             string filepath = lblOrderNum.Text + ".txt";
             if (radCash.Checked == false && radCredit.Checked == false)
@@ -77,10 +78,17 @@ namespace Andrew_Stephen_Final_Project
                     if (cbxYear.SelectedIndex == -1)
                         isValid = false;
                 }
+                //error checking for tip text box
+                if (!double.TryParse(txtTip.Text, out double isDouble))
+                    isValid = false;
+                else if (double.Parse(txtTip.Text) < 0)
+                    isValid = false;
                 if (!isValid)
                     MessageBox.Show("Please correct errors in payment info.");
+                //all user input is valid
                 else
                 {
+                    frmReceipt receiptForm = new frmReceipt();
                     //Add tip
                     double newtotal;
                     lstOrderInProgress.Items.Add("Tip:\t\t\t$" + txtTip.Text);
@@ -89,13 +97,19 @@ namespace Andrew_Stephen_Final_Project
                         newtotal = frmMain.total;
                     else
                         newtotal = double.Parse(txtTip.Text) + frmMain.total;
-                    lstOrderInProgress.Items.Add("New Total:\t\t" + newtotal.ToString("C"));
+                    lstOrderInProgress.Items.Add("Grand Total:\t\t" + newtotal.ToString("C"));
+                    //add the method of payment
+                    if (radCash.Checked == true)
+                        lstOrderInProgress.Items.Add("Method of Payment:\t\t" + radCash.Text);
+                    else
+                        lstOrderInProgress.Items.Add("Method of Payment:\t\t" + radCredit.Text);
                     //write to file
                     //hide the confirmation form
                     outfile = File.CreateText(filepath);
 
                     foreach (string s in lstOrderInProgress.Items)
                     {
+                        receiptForm.lstReceipt.Items.Add(s);
                         outfile.WriteLine(s);
                     }
                     outfile.Close();
@@ -103,14 +117,20 @@ namespace Andrew_Stephen_Final_Project
                     outfile = File.CreateText(filepath);
                     outfile.Write(lblOrderNum.Text);
                     outfile.Close();
+
+
+                   
                     lstOrderInProgress.Items.Clear();
                     txtTip.Text = "";
                     txtCardNum.Text = "";
                     MessageBox.Show("Thank you for coming. We hope you enjoyed your meal.\nThe waiter will come by shortly with your receipt.");
+               
                     this.Hide();
+                    receiptForm.ShowDialog();
                 }
             }         
         }
+
     }
  }
 

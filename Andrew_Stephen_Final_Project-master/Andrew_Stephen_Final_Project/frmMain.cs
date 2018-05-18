@@ -63,20 +63,29 @@ namespace Andrew_Stephen_Final_Project
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            infile = File.OpenText("currentOrderNumber.txt");
             lblTimer.Text = DateTime.Now.ToString();
-            string line = infile.ReadLine();
-            int.TryParse(line, out int lineInt);
-            if (lineInt == 0)
-                lblReceipt.Text = STARTING_ORDER.ToString();
-            else
+            try
             {
-                this.lblReceipt.Text = line;
-                initialOrderNum = int.Parse(lblReceipt.Text);
+                infile = File.OpenText("currentOrderNumber.txt");
+
+                string line = infile.ReadLine();
+                int.TryParse(line, out int lineInt);
+                if (lineInt == 0)
+                    lblReceipt.Text = STARTING_ORDER.ToString();
+                else
+                {
+                    this.lblReceipt.Text = line;
+                    initialOrderNum = int.Parse(lblReceipt.Text);
+                }
+                //close the file
+                infile.Close();
+                splashWindow.ShowDialog();
             }
-            //close the file
-            infile.Close();
-            splashWindow.ShowDialog();
+            catch
+            {
+                lblReceipt.Text = STARTING_ORDER.ToString();
+            }
+            
             
         }
 
@@ -582,6 +591,7 @@ namespace Andrew_Stephen_Final_Project
                     lblReceipt.Text = STARTING_ORDER.ToString();
                     initialOrderNum = STARTING_ORDER;
                     newOrder.OrderNumber = initialOrderNum;
+                    lblReceipt.Visible = true;
                 }
                 else
                 {
@@ -708,14 +718,15 @@ namespace Andrew_Stephen_Final_Project
             btnPay.Visible = false;
             btnSearchOrder.Visible = false;
             btnNewOrder.Visible = true;
-            btnEditOrder.Visible = true;
+            btnEditOrder.Visible = false;
             lblReceipt.Text = "";
             lblOrderNum.Visible = false;
             txtOrderNum.Text = "";
             txtOrderNum.Visible = false;
             txtName.Text = "";
             gbxPay.Visible = false;
-            btnPay.Visible = false;           
+            btnPay.Visible = false; 
+            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -743,6 +754,19 @@ namespace Andrew_Stephen_Final_Project
             {
                 salestax = 0;
                 total = 0;
+
+                //add order number to the confirm form listbox
+                confrimForm.lstOrderInProgress.Items.Add("Receipt # " + lblReceipt.Text);
+                //add customer name
+                confrimForm.lstOrderInProgress.Items.Add("Customer Name: " + txtName.Text);
+                //date and time
+                confrimForm.lstOrderInProgress.Items.Add(lblTimer.Text);
+                //add a blank line item
+                confrimForm.lstOrderInProgress.Items.Add("");
+
+                //loop through main form list box
+                //and write lines to the confirm form
+                //list box
                 foreach (string lineItem in lstMainFormOrderItems.Items)
                 {
                     confrimForm.lstOrderInProgress.Items.Add(lineItem);
@@ -769,6 +793,7 @@ namespace Andrew_Stephen_Final_Project
                 gbxDrinks.Visible = false;
                 btnPay.Visible = false;
                 btnOk.Visible = false;
+                btnEditOrder.Visible = false;
                 btnCancel.Visible = false;
                 lblReceipt.Visible = false;
                 btnBuildOrder.Text = "Place Order";

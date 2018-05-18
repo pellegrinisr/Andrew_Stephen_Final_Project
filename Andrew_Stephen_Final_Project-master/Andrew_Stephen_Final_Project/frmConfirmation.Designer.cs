@@ -48,6 +48,7 @@
             // 
             // lstOrderInProgress
             // 
+            this.lstOrderInProgress.BackColor = System.Drawing.Color.Ivory;
             this.lstOrderInProgress.FormattingEnabled = true;
             this.lstOrderInProgress.ItemHeight = 16;
             this.lstOrderInProgress.Location = new System.Drawing.Point(35, 40);
@@ -77,6 +78,7 @@
             // 
             // txtTip
             // 
+            this.txtTip.BackColor = System.Drawing.Color.Ivory;
             this.txtTip.Location = new System.Drawing.Point(101, 56);
             this.txtTip.Name = "txtTip";
             this.txtTip.Size = new System.Drawing.Size(112, 22);
@@ -93,16 +95,18 @@
             // 
             // btnConfirm
             // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Olive;
             this.btnConfirm.Location = new System.Drawing.Point(264, 236);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(128, 36);
             this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "Make Payment";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // txtCardNum
             // 
+            this.txtCardNum.BackColor = System.Drawing.Color.Ivory;
             this.txtCardNum.Location = new System.Drawing.Point(172, 164);
             this.txtCardNum.Name = "txtCardNum";
             this.txtCardNum.Size = new System.Drawing.Size(220, 22);
@@ -226,6 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.ClientSize = new System.Drawing.Size(1093, 680);
             this.ControlBox = false;
             this.Controls.Add(this.lblReceiptNum);
@@ -233,6 +238,7 @@
             this.Controls.Add(this.gbxPaymentInfo);
             this.Controls.Add(this.lstOrderInProgress);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Ivory;
             this.Name = "frmConfirmation";
             this.Text = "frmConfirmation";
             this.Load += new System.EventHandler(this.frmConfirmation_Load);

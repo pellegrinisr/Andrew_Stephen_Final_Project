@@ -1,0 +1,8 @@
+Spaghetti     (1)      ($9.99)      $9.99
+Linguini     (1)      ($10.99)      $10.99
+Spring Greens     (1)      ($8.45)      $8.45
+Subtotal:			$29.43
+Tax:			$2.80
+Total:			$32.23
+Tip:			$2
+New Total:		$34.23

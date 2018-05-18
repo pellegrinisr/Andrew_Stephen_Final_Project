@@ -1,0 +1,7 @@
+Spaghetti     (2)      ($9.99)      $19.98
+Veal Marsala     (2)      ($24.75)      $49.50
+Subtotal:			$69.48
+Tax:			$6.60
+Total:			$76.08
+Tip:			$4
+New Total:		$80.08

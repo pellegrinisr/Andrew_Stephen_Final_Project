@@ -1,0 +1,6 @@
+Chicken Picatta     (1)      ($18.99)      $18.99
+Subtotal:			$18.99
+Tax:			$1.80
+Total:			$20.79
+Tip:			$2
+New Total:		$22.79

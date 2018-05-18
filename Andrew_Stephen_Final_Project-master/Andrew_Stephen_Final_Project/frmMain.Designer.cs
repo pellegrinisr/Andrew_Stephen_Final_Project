@@ -126,6 +126,7 @@
             // 
             // gbxEntree
             // 
+            this.gbxEntree.BackColor = System.Drawing.Color.Transparent;
             this.gbxEntree.Controls.Add(this.cbxPizzaQuant);
             this.gbxEntree.Controls.Add(this.cbxCioppinoQuant);
             this.gbxEntree.Controls.Add(this.cbxMarsalaQuant);
@@ -357,6 +358,7 @@
             // 
             // cbxSpaghettiQuant
             // 
+            this.cbxSpaghettiQuant.BackColor = System.Drawing.SystemColors.Window;
             this.cbxSpaghettiQuant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSpaghettiQuant.FormattingEnabled = true;
             this.cbxSpaghettiQuant.Items.AddRange(new object[] {
@@ -1080,51 +1082,56 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(105, 44);
+            this.txtName.BackColor = System.Drawing.Color.Ivory;
+            this.txtName.Location = new System.Drawing.Point(107, 44);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 22);
             this.txtName.TabIndex = 4;
             // 
             // btnBuildOrder
             // 
+            this.btnBuildOrder.BackColor = System.Drawing.Color.Olive;
             this.btnBuildOrder.Location = new System.Drawing.Point(198, 598);
             this.btnBuildOrder.Name = "btnBuildOrder";
             this.btnBuildOrder.Size = new System.Drawing.Size(92, 47);
             this.btnBuildOrder.TabIndex = 5;
             this.btnBuildOrder.Text = "Place Order";
-            this.btnBuildOrder.UseVisualStyleBackColor = true;
+            this.btnBuildOrder.UseVisualStyleBackColor = false;
             this.btnBuildOrder.Visible = false;
             this.btnBuildOrder.Click += new System.EventHandler(this.btnBuildOrder_Click);
             // 
             // btnReset
             // 
+            this.btnReset.BackColor = System.Drawing.Color.Olive;
             this.btnReset.Location = new System.Drawing.Point(389, 598);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(92, 47);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Visible = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnNewOrder
             // 
+            this.btnNewOrder.BackColor = System.Drawing.Color.Olive;
             this.btnNewOrder.Location = new System.Drawing.Point(105, 78);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(107, 41);
             this.btnNewOrder.TabIndex = 8;
             this.btnNewOrder.Text = "New Order";
-            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.UseVisualStyleBackColor = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click_1);
             // 
             // btnPay
             // 
+            this.btnPay.BackColor = System.Drawing.Color.Olive;
             this.btnPay.Location = new System.Drawing.Point(91, 21);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(105, 37);
             this.btnPay.TabIndex = 9;
             this.btnPay.Text = "Pay Bill";
-            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Visible = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
@@ -1139,12 +1146,13 @@
             // 
             // btnEditOrder
             // 
+            this.btnEditOrder.BackColor = System.Drawing.Color.Olive;
             this.btnEditOrder.Location = new System.Drawing.Point(234, 78);
             this.btnEditOrder.Name = "btnEditOrder";
             this.btnEditOrder.Size = new System.Drawing.Size(98, 41);
             this.btnEditOrder.TabIndex = 11;
             this.btnEditOrder.Text = "Edit Order";
-            this.btnEditOrder.UseVisualStyleBackColor = true;
+            this.btnEditOrder.UseVisualStyleBackColor = false;
             this.btnEditOrder.Visible = false;
             this.btnEditOrder.Click += new System.EventHandler(this.btnEditOrder_Click);
             // 
@@ -1179,6 +1187,7 @@
             // 
             // lstMainFormOrderItems
             // 
+            this.lstMainFormOrderItems.BackColor = System.Drawing.Color.Ivory;
             this.lstMainFormOrderItems.FormattingEnabled = true;
             this.lstMainFormOrderItems.ItemHeight = 16;
             this.lstMainFormOrderItems.Location = new System.Drawing.Point(1029, 33);
@@ -1210,23 +1219,25 @@
             // 
             // btnOk
             // 
+            this.btnOk.BackColor = System.Drawing.Color.Olive;
             this.btnOk.Location = new System.Drawing.Point(44, 70);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(84, 23);
             this.btnOk.TabIndex = 18;
             this.btnOk.Text = "Confirm";
-            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Visible = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.Olive;
             this.btnCancel.Location = new System.Drawing.Point(164, 70);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 23);
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Visible = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -1247,6 +1258,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1473, 728);
             this.Controls.Add(this.gbxPay);
             this.Controls.Add(this.btnClose);
@@ -1266,6 +1279,7 @@
             this.Controls.Add(this.gbxSalad);
             this.Controls.Add(this.gbxEntree);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Ivory;
             this.Name = "frmMain";
             this.Text = "Delicisio E-Ristorante";
             this.Load += new System.EventHandler(this.frmMain_Load);
