@@ -62,13 +62,19 @@ namespace Andrew_Stephen_Final_Project
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            
+            //flag values
             bool isValid = true;
+            bool tipValid = true;
             string filepath = lblOrderNum.Text + ".txt";
+            //check if no payment method selected
             if (radCash.Checked == false && radCredit.Checked == false)
                 MessageBox.Show("Please choose a payment method.");
+            //user selected a payment method
             else
             {
+                //check if user selected credit
+                //then check card num, exp. month, 
+                //and exp. year
                 if (radCredit.Checked == true)
                 {
                     if (txtCardNum.Text == "")
@@ -79,11 +85,23 @@ namespace Andrew_Stephen_Final_Project
                         isValid = false;
                 }
                 //error checking for tip text box
+                //check if tip box can be parsed as double
+                //display a message box
                 if (!double.TryParse(txtTip.Text, out double isDouble))
-                    isValid = false;
+                {
+                    //isValid = false;
+                    MessageBox.Show("Tip value must be a number.\n" +
+                        "To leave no tip, enter 0.");
+                }
+                //check if tip box value is less than 0
+                //display a message box 
                 else if (double.Parse(txtTip.Text) < 0)
-                    isValid = false;
-                if (!isValid)
+                {
+                    //isValid = false;
+                    MessageBox.Show("Tip value cannot be negative.");
+                }
+                //show message box if payment info invalid
+                else if (!isValid)
                     MessageBox.Show("Please correct errors in payment info.");
                 //all user input is valid
                 else
@@ -119,12 +137,12 @@ namespace Andrew_Stephen_Final_Project
                     outfile.Close();
 
 
-                   
+
                     lstOrderInProgress.Items.Clear();
                     txtTip.Text = "";
                     txtCardNum.Text = "";
                     MessageBox.Show("Thank you for coming. We hope you enjoyed your meal.\nThe waiter will come by shortly with your receipt.");
-               
+
                     this.Hide();
                     receiptForm.ShowDialog();
                 }
