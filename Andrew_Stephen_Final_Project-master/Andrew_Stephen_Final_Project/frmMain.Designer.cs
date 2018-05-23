@@ -162,7 +162,7 @@
             this.gbxEntree.Location = new System.Drawing.Point(13, 136);
             this.gbxEntree.Name = "gbxEntree";
             this.gbxEntree.Size = new System.Drawing.Size(672, 389);
-            this.gbxEntree.TabIndex = 0;
+            this.gbxEntree.TabIndex = 14;
             this.gbxEntree.TabStop = false;
             this.gbxEntree.Text = "Entree";
             this.gbxEntree.Visible = false;
@@ -185,7 +185,7 @@
             this.cbxPizzaQuant.Location = new System.Drawing.Point(532, 310);
             this.cbxPizzaQuant.Name = "cbxPizzaQuant";
             this.cbxPizzaQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxPizzaQuant.TabIndex = 41;
+            this.cbxPizzaQuant.TabIndex = 19;
             this.cbxPizzaQuant.Visible = false;
             // 
             // cbxCioppinoQuant
@@ -206,7 +206,7 @@
             this.cbxCioppinoQuant.Location = new System.Drawing.Point(532, 243);
             this.cbxCioppinoQuant.Name = "cbxCioppinoQuant";
             this.cbxCioppinoQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxCioppinoQuant.TabIndex = 40;
+            this.cbxCioppinoQuant.TabIndex = 17;
             this.cbxCioppinoQuant.Visible = false;
             // 
             // cbxMarsalaQuant
@@ -227,7 +227,7 @@
             this.cbxMarsalaQuant.Location = new System.Drawing.Point(532, 185);
             this.cbxMarsalaQuant.Name = "cbxMarsalaQuant";
             this.cbxMarsalaQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxMarsalaQuant.TabIndex = 39;
+            this.cbxMarsalaQuant.TabIndex = 15;
             this.cbxMarsalaQuant.Visible = false;
             // 
             // cbxPicattaQuant
@@ -248,7 +248,7 @@
             this.cbxPicattaQuant.Location = new System.Drawing.Point(532, 116);
             this.cbxPicattaQuant.Name = "cbxPicattaQuant";
             this.cbxPicattaQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxPicattaQuant.TabIndex = 38;
+            this.cbxPicattaQuant.TabIndex = 13;
             this.cbxPicattaQuant.Visible = false;
             // 
             // cbxCarbonaraQuant
@@ -269,7 +269,7 @@
             this.cbxCarbonaraQuant.Location = new System.Drawing.Point(532, 48);
             this.cbxCarbonaraQuant.Name = "cbxCarbonaraQuant";
             this.cbxCarbonaraQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxCarbonaraQuant.TabIndex = 37;
+            this.cbxCarbonaraQuant.TabIndex = 11;
             this.cbxCarbonaraQuant.Visible = false;
             // 
             // cbxPenneQuant
@@ -290,7 +290,7 @@
             this.cbxPenneQuant.Location = new System.Drawing.Point(162, 311);
             this.cbxPenneQuant.Name = "cbxPenneQuant";
             this.cbxPenneQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxPenneQuant.TabIndex = 36;
+            this.cbxPenneQuant.TabIndex = 9;
             this.cbxPenneQuant.Visible = false;
             // 
             // cbxRavioliQuant
@@ -311,7 +311,7 @@
             this.cbxRavioliQuant.Location = new System.Drawing.Point(162, 243);
             this.cbxRavioliQuant.Name = "cbxRavioliQuant";
             this.cbxRavioliQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxRavioliQuant.TabIndex = 35;
+            this.cbxRavioliQuant.TabIndex = 7;
             this.cbxRavioliQuant.Visible = false;
             // 
             // cbxLasagnaQuant
@@ -332,7 +332,7 @@
             this.cbxLasagnaQuant.Location = new System.Drawing.Point(159, 178);
             this.cbxLasagnaQuant.Name = "cbxLasagnaQuant";
             this.cbxLasagnaQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxLasagnaQuant.TabIndex = 34;
+            this.cbxLasagnaQuant.TabIndex = 5;
             this.cbxLasagnaQuant.Visible = false;
             // 
             // cbxLinguiniQuant
@@ -353,7 +353,7 @@
             this.cbxLinguiniQuant.Location = new System.Drawing.Point(162, 118);
             this.cbxLinguiniQuant.Name = "cbxLinguiniQuant";
             this.cbxLinguiniQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxLinguiniQuant.TabIndex = 33;
+            this.cbxLinguiniQuant.TabIndex = 3;
             this.cbxLinguiniQuant.Visible = false;
             // 
             // cbxSpaghettiQuant
@@ -375,7 +375,7 @@
             this.cbxSpaghettiQuant.Location = new System.Drawing.Point(162, 63);
             this.cbxSpaghettiQuant.Name = "cbxSpaghettiQuant";
             this.cbxSpaghettiQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxSpaghettiQuant.TabIndex = 32;
+            this.cbxSpaghettiQuant.TabIndex = 1;
             this.cbxSpaghettiQuant.Visible = false;
             // 
             // label16
@@ -492,7 +492,7 @@
             this.chkPizza.Location = new System.Drawing.Point(382, 310);
             this.chkPizza.Name = "chkPizza";
             this.chkPizza.Size = new System.Drawing.Size(69, 21);
-            this.chkPizza.TabIndex = 9;
+            this.chkPizza.TabIndex = 18;
             this.chkPizza.Text = "Pizza";
             this.chkPizza.UseVisualStyleBackColor = true;
             this.chkPizza.CheckedChanged += new System.EventHandler(this.chkPizza_CheckedChanged);
@@ -503,7 +503,7 @@
             this.chkCioppino.Location = new System.Drawing.Point(382, 245);
             this.chkCioppino.Name = "chkCioppino";
             this.chkCioppino.Size = new System.Drawing.Size(93, 21);
-            this.chkCioppino.TabIndex = 8;
+            this.chkCioppino.TabIndex = 16;
             this.chkCioppino.Text = "Cioppino";
             this.chkCioppino.UseVisualStyleBackColor = true;
             this.chkCioppino.CheckedChanged += new System.EventHandler(this.chkCioppino_CheckedChanged);
@@ -514,7 +514,7 @@
             this.chkMarsala.Location = new System.Drawing.Point(382, 187);
             this.chkMarsala.Name = "chkMarsala";
             this.chkMarsala.Size = new System.Drawing.Size(124, 21);
-            this.chkMarsala.TabIndex = 7;
+            this.chkMarsala.TabIndex = 14;
             this.chkMarsala.Text = "Veal Marsala";
             this.chkMarsala.UseVisualStyleBackColor = true;
             this.chkMarsala.CheckedChanged += new System.EventHandler(this.chkMarsala_CheckedChanged);
@@ -525,7 +525,7 @@
             this.chkPicatta.Location = new System.Drawing.Point(382, 115);
             this.chkPicatta.Name = "chkPicatta";
             this.chkPicatta.Size = new System.Drawing.Size(142, 21);
-            this.chkPicatta.TabIndex = 6;
+            this.chkPicatta.TabIndex = 12;
             this.chkPicatta.Text = "Chicken Picatta";
             this.chkPicatta.UseVisualStyleBackColor = true;
             this.chkPicatta.CheckedChanged += new System.EventHandler(this.chkPicatta_CheckedChanged);
@@ -536,7 +536,7 @@
             this.chkCarbonara.Location = new System.Drawing.Point(382, 46);
             this.chkCarbonara.Name = "chkCarbonara";
             this.chkCarbonara.Size = new System.Drawing.Size(106, 21);
-            this.chkCarbonara.TabIndex = 5;
+            this.chkCarbonara.TabIndex = 10;
             this.chkCarbonara.Text = "Carbonara";
             this.chkCarbonara.UseVisualStyleBackColor = true;
             this.chkCarbonara.CheckedChanged += new System.EventHandler(this.chkCarbonara_CheckedChanged);
@@ -547,7 +547,7 @@
             this.chkPenne.Location = new System.Drawing.Point(24, 310);
             this.chkPenne.Name = "chkPenne";
             this.chkPenne.Size = new System.Drawing.Size(76, 21);
-            this.chkPenne.TabIndex = 4;
+            this.chkPenne.TabIndex = 8;
             this.chkPenne.Text = "Penne";
             this.chkPenne.UseVisualStyleBackColor = true;
             this.chkPenne.CheckedChanged += new System.EventHandler(this.chkPenne_CheckedChanged);
@@ -558,7 +558,7 @@
             this.chkRavioli.Location = new System.Drawing.Point(24, 242);
             this.chkRavioli.Name = "chkRavioli";
             this.chkRavioli.Size = new System.Drawing.Size(79, 21);
-            this.chkRavioli.TabIndex = 3;
+            this.chkRavioli.TabIndex = 6;
             this.chkRavioli.Text = "Ravioli";
             this.chkRavioli.UseVisualStyleBackColor = true;
             this.chkRavioli.CheckedChanged += new System.EventHandler(this.chkRavioli_CheckedChanged);
@@ -569,7 +569,7 @@
             this.chkLasagna.Location = new System.Drawing.Point(24, 178);
             this.chkLasagna.Name = "chkLasagna";
             this.chkLasagna.Size = new System.Drawing.Size(92, 21);
-            this.chkLasagna.TabIndex = 2;
+            this.chkLasagna.TabIndex = 4;
             this.chkLasagna.Text = "Lasagna";
             this.chkLasagna.UseVisualStyleBackColor = true;
             this.chkLasagna.CheckedChanged += new System.EventHandler(this.chkLasagna_CheckedChanged);
@@ -580,7 +580,7 @@
             this.chkLinguini.Location = new System.Drawing.Point(24, 117);
             this.chkLinguini.Name = "chkLinguini";
             this.chkLinguini.Size = new System.Drawing.Size(87, 21);
-            this.chkLinguini.TabIndex = 1;
+            this.chkLinguini.TabIndex = 2;
             this.chkLinguini.Text = "Linguini";
             this.chkLinguini.UseVisualStyleBackColor = true;
             this.chkLinguini.CheckedChanged += new System.EventHandler(this.chkLinguini_CheckedChanged);
@@ -613,7 +613,7 @@
             this.gbxSalad.Location = new System.Drawing.Point(702, 26);
             this.gbxSalad.Name = "gbxSalad";
             this.gbxSalad.Size = new System.Drawing.Size(297, 279);
-            this.gbxSalad.TabIndex = 1;
+            this.gbxSalad.TabIndex = 5;
             this.gbxSalad.TabStop = false;
             this.gbxSalad.Text = "Salad";
             this.gbxSalad.Visible = false;
@@ -636,7 +636,7 @@
             this.cbxCapreseQuant.Location = new System.Drawing.Point(165, 230);
             this.cbxCapreseQuant.Name = "cbxCapreseQuant";
             this.cbxCapreseQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxCapreseQuant.TabIndex = 22;
+            this.cbxCapreseQuant.TabIndex = 7;
             this.cbxCapreseQuant.Visible = false;
             // 
             // cbxSpringQuant
@@ -657,7 +657,7 @@
             this.cbxSpringQuant.Location = new System.Drawing.Point(165, 173);
             this.cbxSpringQuant.Name = "cbxSpringQuant";
             this.cbxSpringQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxSpringQuant.TabIndex = 21;
+            this.cbxSpringQuant.TabIndex = 5;
             this.cbxSpringQuant.Visible = false;
             // 
             // cbxCaesarQuant
@@ -678,7 +678,7 @@
             this.cbxCaesarQuant.Location = new System.Drawing.Point(165, 114);
             this.cbxCaesarQuant.Name = "cbxCaesarQuant";
             this.cbxCaesarQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxCaesarQuant.TabIndex = 20;
+            this.cbxCaesarQuant.TabIndex = 3;
             this.cbxCaesarQuant.Visible = false;
             // 
             // cbxHouseQuant
@@ -699,7 +699,7 @@
             this.cbxHouseQuant.Location = new System.Drawing.Point(163, 40);
             this.cbxHouseQuant.Name = "cbxHouseQuant";
             this.cbxHouseQuant.Size = new System.Drawing.Size(53, 24);
-            this.cbxHouseQuant.TabIndex = 19;
+            this.cbxHouseQuant.TabIndex = 1;
             this.cbxHouseQuant.Visible = false;
             // 
             // label20
@@ -744,7 +744,7 @@
             this.chkCaprese.Location = new System.Drawing.Point(7, 220);
             this.chkCaprese.Name = "chkCaprese";
             this.chkCaprese.Size = new System.Drawing.Size(90, 21);
-            this.chkCaprese.TabIndex = 10;
+            this.chkCaprese.TabIndex = 6;
             this.chkCaprese.Text = "Caprese";
             this.chkCaprese.UseVisualStyleBackColor = true;
             this.chkCaprese.CheckedChanged += new System.EventHandler(this.chkCaprese_CheckedChanged);
@@ -755,7 +755,7 @@
             this.chkSpringGreens.Location = new System.Drawing.Point(7, 162);
             this.chkSpringGreens.Name = "chkSpringGreens";
             this.chkSpringGreens.Size = new System.Drawing.Size(135, 21);
-            this.chkSpringGreens.TabIndex = 9;
+            this.chkSpringGreens.TabIndex = 4;
             this.chkSpringGreens.Text = "Spring Greens";
             this.chkSpringGreens.UseVisualStyleBackColor = true;
             this.chkSpringGreens.CheckedChanged += new System.EventHandler(this.chkSpringGreens_CheckedChanged);
@@ -766,7 +766,7 @@
             this.chkCaesar.Location = new System.Drawing.Point(7, 102);
             this.chkCaesar.Name = "chkCaesar";
             this.chkCaesar.Size = new System.Drawing.Size(81, 21);
-            this.chkCaesar.TabIndex = 8;
+            this.chkCaesar.TabIndex = 2;
             this.chkCaesar.Text = "Caesar";
             this.chkCaesar.UseVisualStyleBackColor = true;
             this.chkCaesar.CheckedChanged += new System.EventHandler(this.chkCaesar_CheckedChanged);
@@ -800,7 +800,7 @@
             this.gbxDrinks.Location = new System.Drawing.Point(702, 314);
             this.gbxDrinks.Name = "gbxDrinks";
             this.gbxDrinks.Size = new System.Drawing.Size(297, 380);
-            this.gbxDrinks.TabIndex = 2;
+            this.gbxDrinks.TabIndex = 8;
             this.gbxDrinks.TabStop = false;
             this.gbxDrinks.Text = "Drinks";
             this.gbxDrinks.Visible = false;
@@ -872,7 +872,7 @@
             0});
             this.nudWhiteQuant.Name = "nudWhiteQuant";
             this.nudWhiteQuant.Size = new System.Drawing.Size(67, 22);
-            this.nudWhiteQuant.TabIndex = 28;
+            this.nudWhiteQuant.TabIndex = 3;
             this.nudWhiteQuant.Value = new decimal(new int[] {
             1,
             0,
@@ -895,7 +895,7 @@
             0});
             this.nudRedQuant.Name = "nudRedQuant";
             this.nudRedQuant.Size = new System.Drawing.Size(65, 22);
-            this.nudRedQuant.TabIndex = 27;
+            this.nudRedQuant.TabIndex = 1;
             this.nudRedQuant.Value = new decimal(new int[] {
             1,
             0,
@@ -909,7 +909,7 @@
             this.chkWhite.Location = new System.Drawing.Point(11, 74);
             this.chkWhite.Name = "chkWhite";
             this.chkWhite.Size = new System.Drawing.Size(122, 21);
-            this.chkWhite.TabIndex = 26;
+            this.chkWhite.TabIndex = 2;
             this.chkWhite.Text = "House White";
             this.chkWhite.UseVisualStyleBackColor = true;
             this.chkWhite.CheckedChanged += new System.EventHandler(this.chkWhite_CheckedChanged);
@@ -920,7 +920,7 @@
             this.chkRed.Location = new System.Drawing.Point(11, 27);
             this.chkRed.Name = "chkRed";
             this.chkRed.Size = new System.Drawing.Size(110, 21);
-            this.chkRed.TabIndex = 25;
+            this.chkRed.TabIndex = 0;
             this.chkRed.Text = "House Red";
             this.chkRed.UseVisualStyleBackColor = true;
             this.chkRed.CheckedChanged += new System.EventHandler(this.chkRed_CheckedChanged);
@@ -941,7 +941,7 @@
             this.radNo.Location = new System.Drawing.Point(98, 218);
             this.radNo.Name = "radNo";
             this.radNo.Size = new System.Drawing.Size(54, 21);
-            this.radNo.TabIndex = 24;
+            this.radNo.TabIndex = 10;
             this.radNo.TabStop = true;
             this.radNo.Text = " No";
             this.radNo.UseVisualStyleBackColor = true;
@@ -952,7 +952,7 @@
             this.radYes.Location = new System.Drawing.Point(24, 218);
             this.radYes.Name = "radYes";
             this.radYes.Size = new System.Drawing.Size(56, 21);
-            this.radYes.TabIndex = 23;
+            this.radYes.TabIndex = 9;
             this.radYes.TabStop = true;
             this.radYes.Text = "Yes";
             this.radYes.UseVisualStyleBackColor = true;
@@ -982,7 +982,7 @@
             0});
             this.nudSpriteQuant.Name = "nudSpriteQuant";
             this.nudSpriteQuant.Size = new System.Drawing.Size(61, 22);
-            this.nudSpriteQuant.TabIndex = 21;
+            this.nudSpriteQuant.TabIndex = 8;
             this.nudSpriteQuant.Value = new decimal(new int[] {
             1,
             0,
@@ -1005,7 +1005,7 @@
             this.chkSprite.Location = new System.Drawing.Point(24, 117);
             this.chkSprite.Name = "chkSprite";
             this.chkSprite.Size = new System.Drawing.Size(73, 21);
-            this.chkSprite.TabIndex = 19;
+            this.chkSprite.TabIndex = 7;
             this.chkSprite.Text = "Sprite";
             this.chkSprite.UseVisualStyleBackColor = true;
             this.chkSprite.CheckedChanged += new System.EventHandler(this.chkSprite_CheckedChanged);
@@ -1034,7 +1034,7 @@
             0});
             this.nudCokeQuant.Name = "nudCokeQuant";
             this.nudCokeQuant.Size = new System.Drawing.Size(61, 22);
-            this.nudCokeQuant.TabIndex = 17;
+            this.nudCokeQuant.TabIndex = 4;
             this.nudCokeQuant.Value = new decimal(new int[] {
             1,
             0,
@@ -1057,7 +1057,7 @@
             this.chkCoke.Location = new System.Drawing.Point(24, 62);
             this.chkCoke.Name = "chkCoke";
             this.chkCoke.Size = new System.Drawing.Size(66, 21);
-            this.chkCoke.TabIndex = 15;
+            this.chkCoke.TabIndex = 2;
             this.chkCoke.Text = "Coke";
             this.chkCoke.UseVisualStyleBackColor = true;
             this.chkCoke.CheckedChanged += new System.EventHandler(this.chkCoke_CheckedChanged);
@@ -1068,7 +1068,7 @@
             this.label2.Location = new System.Drawing.Point(13, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 17);
-            this.label2.TabIndex = 11;
+            this.label2.TabIndex = 6;
             this.label2.Text = "Soft Drinks";
             // 
             // label1
@@ -1086,7 +1086,7 @@
             this.txtName.Location = new System.Drawing.Point(107, 44);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 22);
-            this.txtName.TabIndex = 4;
+            this.txtName.TabIndex = 0;
             // 
             // btnBuildOrder
             // 
@@ -1094,7 +1094,7 @@
             this.btnBuildOrder.Location = new System.Drawing.Point(198, 598);
             this.btnBuildOrder.Name = "btnBuildOrder";
             this.btnBuildOrder.Size = new System.Drawing.Size(92, 47);
-            this.btnBuildOrder.TabIndex = 5;
+            this.btnBuildOrder.TabIndex = 11;
             this.btnBuildOrder.Text = "Place Order";
             this.btnBuildOrder.UseVisualStyleBackColor = false;
             this.btnBuildOrder.Visible = false;
@@ -1106,7 +1106,7 @@
             this.btnReset.Location = new System.Drawing.Point(389, 598);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(92, 47);
-            this.btnReset.TabIndex = 6;
+            this.btnReset.TabIndex = 12;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Visible = false;
@@ -1118,7 +1118,7 @@
             this.btnNewOrder.Location = new System.Drawing.Point(105, 78);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(107, 41);
-            this.btnNewOrder.TabIndex = 8;
+            this.btnNewOrder.TabIndex = 1;
             this.btnNewOrder.Text = "New Order";
             this.btnNewOrder.UseVisualStyleBackColor = false;
             this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click_1);
@@ -1129,7 +1129,7 @@
             this.btnPay.Location = new System.Drawing.Point(91, 21);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(105, 37);
-            this.btnPay.TabIndex = 9;
+            this.btnPay.TabIndex = 0;
             this.btnPay.Text = "Pay Bill";
             this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Visible = false;
@@ -1249,7 +1249,7 @@
             this.gbxPay.Location = new System.Drawing.Point(1069, 575);
             this.gbxPay.Name = "gbxPay";
             this.gbxPay.Size = new System.Drawing.Size(287, 108);
-            this.gbxPay.TabIndex = 20;
+            this.gbxPay.TabIndex = 13;
             this.gbxPay.TabStop = false;
             this.gbxPay.Text = "Payment";
             this.gbxPay.Visible = false;

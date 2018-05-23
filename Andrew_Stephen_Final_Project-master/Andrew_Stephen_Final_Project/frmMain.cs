@@ -79,14 +79,14 @@ namespace Andrew_Stephen_Final_Project
                 }
                 //close the file
                 infile.Close();
-                splashWindow.ShowDialog();
+                
             }
             catch
             {
                 lblReceipt.Text = STARTING_ORDER.ToString();
             }
-            
-            
+            splashWindow.ShowDialog();
+
         }
 
         //event handler for checkout button
